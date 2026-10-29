@@ -899,6 +899,55 @@ section {
   box-shadow: 0 16px 45px rgba(61, 42, 27, 0.08), 0 0 20px rgba(197, 160, 89, 0.12);
   border-radius: 18px;
   position: relative;
+  overflow: hidden;
+}
+
+/* Couple photo shaded watermark backdrop */
+.friends-shade-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.friends-shade-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  opacity: 0.20;
+  filter: contrast(110%) saturate(85%) sepia(15%);
+  mix-blend-mode: multiply;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.friends-invite-card:hover .friends-shade-img {
+  opacity: 0.25;
+}
+
+.friends-shade-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(253, 250, 243, 0.72) 55%,
+    rgba(250, 247, 240, 0.94) 95%
+  );
+  pointer-events: none;
+}
+
+.friends-invite-content {
+  position: relative;
+  z-index: 1;
 }
 
 .friends-invite-badge-wrap {
@@ -966,7 +1015,9 @@ section {
 .friend-side-box {
   padding: clamp(1.8rem, 3.5vw, 2.5rem);
   border-radius: 14px;
-  background: #FFFDF9;
+  background: rgba(255, 253, 249, 0.90);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(197, 160, 89, 0.35);
   box-shadow: 0 8px 24px rgba(61, 42, 27, 0.05);
   text-align: center;
@@ -1069,7 +1120,9 @@ section {
   margin-top: 2rem;
   padding: 1.2rem 1.75rem;
   border-radius: 12px;
-  background: rgba(197, 160, 89, 0.12);
+  background: rgba(255, 253, 248, 0.90);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px dashed var(--gold-antique);
   display: flex;
   align-items: center;
