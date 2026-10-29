@@ -19,7 +19,7 @@ export function renderLocationSection() {
           <div class="location-card-grid">
             <div class="location-media-col">
               <img
-                src="/assets/venue.png"
+                src="${event.venueImage || '/assets/guruvayoor.png'}"
                 alt="Wedding Venue - ${event.venueName}"
                 class="location-venue-img"
                 loading="lazy"
