@@ -1,4 +1,4 @@
-# Arunima & Abhijith
+# Geethu & Abhin
 
-Wedding Digital Invitation website for Dr. Arunima Madhu & Abhijith V Nair.
+Wedding Digital Invitation website for Geethu Girish Babu & Abhin A S.
 

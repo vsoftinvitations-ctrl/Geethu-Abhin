@@ -22,9 +22,9 @@ export function renderOpeningSection() {
 
           <!-- Couple Names (Central Visual Focus) -->
           <h1 class="opening-couple-names reveal-on-scroll revealed reveal-delay-2">
-            <span class="couple-name bride-name">${bride.shortName || 'Dr. Arunima'}</span>
+            <span class="couple-name bride-name">${bride.shortName || 'Geethu'}</span>
             <span class="opening-couple-ampersand">&amp;</span>
-            <span class="couple-name groom-name">${groom.shortName || 'Abhijith'}</span>
+            <span class="couple-name groom-name">${groom.shortName || 'Abhin'}</span>
           </h1>
 
           <!-- Date & Location Minimal Standard Block -->

@@ -1,93 +1,104 @@
 /**
- * Wedding Digital Invitation Data Configuration (English Only)
- * Arunima & Abhijith Wedding Invitation
+ * Wedding Digital Invitation Data Configuration
+ * Geethu & Abhin Wedding Invitation
  */
 
 export const weddingData = {
   // Couple Information
   bride: {
-    name: "Dr. Arunima Madhu",
-    shortName: "Dr. Arunima",
+    name: "Geethu Girish Babu",
+    shortName: "Geethu",
     qualifications: "",
     image: "/assets/bride.jpg",
     bio: "Daughter of our beloved family, embarking on a sacred new chapter of life with grace and devotion.",
     parents: {
-      father: "Madhu T. S",
-      mother: "Reji Madhu",
+      father: "Girish Babu P",
+      mother: "Sujitha Girish Babu",
       houseName: "",
       city: ""
     },
-    siblingLabel: "Sister",
-    siblingsDisplay: "Athulya Madhu",
-    siblings: [
-      { name: "Athulya Madhu", relation: "Sister" }
-    ]
+    siblingLabel: "",
+    siblingsDisplay: "",
+    siblings: []
   },
   groom: {
-    name: "Abhijith V Nair",
-    shortName: "Abhijith",
+    name: "Abhin A S",
+    shortName: "Abhin",
     qualifications: "",
     image: null,
     bio: "Son of our esteemed family, blessed to begin this divine voyage of love, harmony, and togetherness.",
     parents: {
-      father: "Vinayachandran Nair",
-      mother: "Usha Vinayachandran",
+      father: "Anilkumar S.S",
+      mother: "Sudhakumari V.S",
       houseName: "",
       city: ""
     },
-    siblingLabel: "Siblings",
-    siblingsDisplay: "Sreehari, Aswathy, Rajagopal Sk",
-    siblings: [
-      { name: "Sreehari", relation: "Brother" },
-      { name: "Aswathy", relation: "Sister" },
-      { name: "Rajagopal Sk", relation: "Brother" }
-    ]
+    siblingLabel: "",
+    siblingsDisplay: "",
+    siblings: []
   },
 
   // Wedding Muhurtham & Event Details
   event: {
-    muhurthamLabel: "Wedding Ceremony",
-    dateDisplay: "Saturday, 12 December 2026",
-    timeDisplay: "11:15 AM - 11:59 AM",
-    muhurthamTimeWindow: "Muhurtham: 11:15 AM - 11:59 AM",
-    venueName: "St. George Parish Hall",
-    venueAddress: "Pallikavala, Kattappana",
-    city: "Idukki, Kerala – 685515",
-    googleMapsUrl: "https://maps.app.goo.gl/HjW5yW56Rpsv89Q59?utm_source=chatgpt.com",
-    googleCalendarTitle: "Wedding of Arunima & Abhijith",
-    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding of Dr. Arunima Madhu & Abhijith V Nair at St. George Parish Hall, Kattappana, Idukki, Kerala.",
+    muhurthamLabel: "Wedding Ceremony (Muhurtham)",
+    dateDisplay: "Thursday, 26 November 2026",
+    timeDisplay: "7:00 AM – 8:00 AM",
+    muhurthamTimeWindow: "Muhurtham: 7:00 AM – 8:00 AM",
+    traditionalDate: "1202 Vrischikam 10",
+    venueName: "Guruvayoor Temple",
+    venueAddress: "Guruvayoor Temple",
+    city: "Guruvayur, Kerala",
+    googleMapsUrl: "https://maps.google.com/?q=Guruvayoor+Temple,+Guruvayur,+Kerala",
+    googleCalendarTitle: "Wedding Ceremony of Geethu & Abhin",
+    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding ceremony of Geethu Girish Babu & Abhin A S at Guruvayoor Temple, Guruvayur, Kerala (1202 Vrischikam 10).",
     // Target ISO date for the live countdown timer (YYYY-MM-DDTHH:mm:ss)
-    targetCountdownDate: "2026-12-12T11:15:00"
+    targetCountdownDate: "2026-11-26T07:00:00"
+  },
+
+  // Reception Details
+  reception: {
+    label: "Wedding Reception",
+    dateDisplay: "Sunday, 22 November 2026",
+    timeDisplay: "6:00 PM – 10:00 PM",
+    venueName: "Snehanjali Community Hall",
+    venueAddress: "Kallayi Road",
+    city: "Kozhikode, Kerala",
+    googleMapsUrl: "https://maps.google.com/?q=Snehanjali+Community+Hall,+Kallayi+Road,+Kozhikode,+Kerala",
+    googleCalendarTitle: "Wedding Reception of Geethu & Abhin",
+    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding reception of Geethu Girish Babu & Abhin A S at Snehanjali Community Hall, Kallayi Road, Kozhikode, Kerala."
   },
 
   // RSVP Details (Accept & Decline Scenarios)
   rsvp: {
     whatsappNumber: "919778137459",
-    acceptMessage: "Hello Arunima & Abhijith, we are delighted to attend your wedding celebration!🎉🤍",
-    declineMessage: "Hello Arunima & Abhijith, we won't be able to attend your wedding celebration, but our heartfelt blessings and warm wishes are with you both!🤍✨"
+    acceptMessage: "Hello Geethu & Abhin, we are delighted to attend your wedding celebration!🎉🤍",
+    declineMessage: "Hello Geethu & Abhin, we won't be able to attend your wedding celebration, but our heartfelt blessings and warm wishes are with you both!🤍✨"
   },
 
   // Sacred Ceremonies Timeline
   ceremonies: [
     {
       id: "ceremony-1",
-      englishTitle: "Guest Welcome & Gathering",
-      time: "10:30 AM",
-      description: "Auspicious arrival of family and guests to celebrate the special occasion.",
-      icon: "ring"
+      englishTitle: "Wedding Reception",
+      dateBadge: "Sun, 22 Nov 2026",
+      time: "6:00 PM – 10:00 PM",
+      description: "Grand reception celebration with family and friends at Snehanjali Community Hall, Kallayi Road, Kozhikode.",
+      icon: "party"
     },
     {
       id: "ceremony-2",
-      englishTitle: "Wedding Ceremony (Muhurtham)",
-      time: "11:15 AM - 11:59 AM",
-      description: "Sacred wedding ceremony, exchanging of garlands and marital vows in the presence of loved ones.",
+      englishTitle: "Sacred Wedding Ceremony (Muhurtham)",
+      dateBadge: "Thu, 26 Nov 2026",
+      time: "7:00 AM – 8:00 AM",
+      description: "Sacred thali tying and marriage rituals at Guruvayoor Temple in the auspicious presence of Lord Krishna (1202 Vrischikam 10).",
       icon: "lamp"
     },
     {
       id: "ceremony-3",
-      englishTitle: "Traditional Wedding Feast",
-      time: "01:00 PM onwards",
-      description: "Delicious grand traditional feast served to celebrate the joyful union of Arunima & Abhijith.",
+      englishTitle: "Traditional Feast & Blessings",
+      dateBadge: "Thu, 26 Nov 2026",
+      time: "Following Ceremony",
+      description: "Traditional feast served to celebrate the joyful union of Geethu & Abhin.",
       icon: "leaf"
     }
   ],
@@ -96,12 +107,12 @@ export const weddingData = {
   galleryImages: [
     {
       src: "/assets/couple.jpg",
-      alt: "Dr. Arunima Madhu & Abhijith V Nair",
+      alt: "Geethu Girish Babu & Abhin A S",
       caption: "A journey of eternal companionship"
     },
     {
       src: "/assets/bride.jpg",
-      alt: "Radiant Bride Dr. Arunima Madhu",
+      alt: "Radiant Bride Geethu Girish Babu",
       caption: "Radiant bride adorned in traditional Kerala Kasavu"
     },
     {
@@ -120,11 +131,12 @@ export const weddingData = {
     coupleIntroTagline: "Two souls, one journey, and a lifetime of beautiful moments.",
     weddingTogethernessQuote: "A wedding is the sacred union of two souls and the joyful coming together of two families—bound by love, cherished traditions, and the blessing of a lifetime of togetherness.",
     invitationHeading: "Cordially Inviting You",
-    invitationSubtitleEng: "With joy in our hearts,\nwe invite you to celebrate our wedding.",
+    invitationSubtitleEng: "With joy in our hearts,\nwe invite you to celebrate our wedding and reception.",
     familyHeading: "With the blessings of our families",
-    countdownHeading: "Counting the moments...",
-    locationHeading: "Join Us to Celebrate Our Wedding",
+    countdownHeading: "Counting the moments to our wedding...",
+    locationHeading: "Locations & Directions",
     finalBlessingEnglish: "Your presence and blessings\nwill make our beginning even more beautiful.",
     withLove: "With Love"
   }
 };
+
