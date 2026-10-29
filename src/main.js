@@ -5,6 +5,7 @@ import { initBackgroundMusic } from './components/BackgroundMusic.js';
 import { renderOpeningSection, initOpeningInteractions } from './components/OpeningSection.js';
 import { renderGettingMarriedSection, initGettingMarriedSlider } from './components/GettingMarriedSection.js';
 import { renderCoupleSection } from './components/CoupleSection.js';
+import { renderFriendsInviteSection } from './components/FriendsInviteSection.js';
 import { renderWeddingDetails } from './components/WeddingDetails.js';
 import { renderKeralaVisual } from './components/KeralaVisual.js';
 import { renderCeremonyTimeline } from './components/CeremonyTimeline.js';
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ${renderOpeningSection()}
     ${renderGettingMarriedSection()}
     ${renderCoupleSection()}
+    ${renderFriendsInviteSection()}
     ${renderWeddingDetails()}
     ${renderKeralaVisual()}
     ${renderCeremonyTimeline()}

@@ -19,7 +19,7 @@ export function renderRSVPSection() {
       <div class="kasavu-card rsvp-card reveal-on-scroll">
         <span class="rsvp-tagline">R. S. V. P</span>
         <h2 class="rsvp-title">Celebrate With Us</h2>
-        <p class="rsvp-subtitle">Please let us know if you will be joining our wedding celebration</p>
+        <p class="rsvp-subtitle">Friends &amp; Family: Let us know if you'll be joining our wedding &amp; reception!</p>
 
         <div class="rsvp-buttons-group">
           <!-- Scenario 1: Accept / Attending -->

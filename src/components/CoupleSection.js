@@ -19,6 +19,7 @@ export function renderCoupleSection() {
             <p class="couple-parents-line">D/o Smt. ${bride.parents.mother} &amp; Sri. ${bride.parents.father}</p>
             ${bride.parents.houseName || bride.parents.city ? `<p class="couple-address-line text-muted">${bride.parents.houseName ? `${bride.parents.houseName}, ` : ''}${bride.parents.city}</p>` : ''}
             ${bride.siblingsDisplay ? `<p class="couple-sibling-line"><span class="couple-sibling-label">${bride.siblingLabel || 'Sister'}:</span> <span class="couple-sibling-name">${bride.siblingsDisplay}</span></p>` : ''}
+            ${bride.bio ? `<p class="couple-bio-quote">“${bride.bio}”</p>` : ''}
           </div>
         </div>
 
@@ -31,6 +32,7 @@ export function renderCoupleSection() {
             <p class="couple-parents-line">S/o Smt. ${groom.parents.mother} &amp; Sri. ${groom.parents.father}</p>
             ${groom.parents.houseName || groom.parents.city ? `<p class="couple-address-line text-muted">${groom.parents.houseName ? `${groom.parents.houseName}, ` : ''}${groom.parents.city}</p>` : ''}
             ${groom.siblingsDisplay ? `<p class="couple-sibling-line"><span class="couple-sibling-label">${groom.siblingLabel || 'Siblings'}:</span> <span class="couple-sibling-name">${groom.siblingsDisplay}</span></p>` : ''}
+            ${groom.bio ? `<p class="couple-bio-quote">“${groom.bio}”</p>` : ''}
           </div>
         </div>
       </div>
