@@ -59,7 +59,6 @@ export function renderFriendsInviteSection() {
 
         <!-- Joint Call to Action / Mutual Note -->
         <div class="friends-joint-banner reveal-on-scroll">
-          <div class="joint-banner-icon">✨</div>
           <p class="joint-banner-text">${friendsInvite.jointNote}</p>
         </div>
       </div>

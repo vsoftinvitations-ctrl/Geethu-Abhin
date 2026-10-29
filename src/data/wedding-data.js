@@ -69,13 +69,6 @@ export const weddingData = {
     googleCalendarDescription: "You are cordially invited with family to celebrate the wedding reception of Geethu Girish Babu & Abhin A S at Snehanjali Community Hall, Kallayi Road, Kozhikode, Kerala."
   },
 
-  // RSVP Details (Accept & Decline Scenarios)
-  rsvp: {
-    whatsappNumber: "919778137459",
-    acceptMessage: "Hello Geethu & Abhin, we are delighted to attend your wedding celebration!🎉🤍",
-    declineMessage: "Hello Geethu & Abhin, we won't be able to attend your wedding celebration, but our heartfelt blessings and warm wishes are with you both!🤍✨"
-  },
-
   // Sacred Ceremonies Timeline
   ceremonies: [
     {
