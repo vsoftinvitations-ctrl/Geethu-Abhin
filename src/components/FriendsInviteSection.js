@@ -12,9 +12,9 @@ export function renderFriendsInviteSection() {
   return `
     <section id="friends-invitation" class="friends-invite-section">
       <div class="kasavu-card friends-invite-card reveal-on-scroll">
-        <!-- Couple Photo Shade / Watermark Backdrop -->
+        <!-- Friends Photo Shade / Watermark Backdrop -->
         <div class="friends-shade-backdrop" aria-hidden="true">
-          <img src="/assets/image.png" alt="" class="friends-shade-img" loading="lazy" />
+          <img src="/assets/frnd.png" alt="" class="friends-shade-img" loading="lazy" />
           <div class="friends-shade-overlay"></div>
         </div>
 
