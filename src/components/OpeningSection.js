@@ -12,13 +12,13 @@ export function renderOpeningSection() {
 
           <!-- Minimal Standard Pre-title -->
           <div class="opening-pretitle reveal-on-scroll revealed reveal-delay-1">
-            Two Friends &bull; One Beautiful Forever
+            Wedding Invitation
           </div>
 
           <!-- Elegant Standard Invitation Line -->
           <p class="opening-blessing-en reveal-on-scroll revealed reveal-delay-1">
-            From best friends to partners for life.<br />
-            Together with our families and our common circle of friends from both sides, we joyfully invite you to celebrate the wedding of
+            Together with our families and our dearest friends from both sides,<br />
+            we joyfully invite you to celebrate the wedding of
           </p>
 
           <!-- Couple Names (Central Visual Focus) -->

@@ -123,41 +123,41 @@ export const weddingData = {
     }
   ],
 
-  // Friends & Mutual Circle Invitation
+  // Friends & Lifelong Companions Invitation
   friendsInvite: {
     badge: "From The Bride's Side & The Groom's Side",
-    heading: "To All Our Mutual Friends & Loved Ones",
-    subtitle: "Because we share the same amazing circle, there are no separate sides—you belong to both of us!",
-    quote: "“What started as an unforgettable friendship filled with laughs, late-night talks, and shared memories has blossomed into our forever promise.”",
+    heading: "To All Our Cherished Friends",
+    subtitle: "To our childhood friends, school companions, and every dear soul who walked this journey with us",
+    quote: "“Friends are the family we choose along the way. From childhood memories and classroom laughter to life's sweetest milestones, each of you holds an irreplaceable place in our story.”",
     brideNote: {
       side: "From Geethu’s Side",
-      title: "To Our Beloved Gang",
-      message: "To all the friends who've shared my laughs, dreams, and milestones—and especially to our common gang who've cheered for both of us—having you by our side as I marry my best friend means the world!",
+      title: "To My Dearest Friends",
+      message: "To the friends who have known me since childhood, shared my growing years, laughter, and milestones, and to every wonderful friend who has been part of my life—having your blessings as I begin this new chapter with my best friend means everything to me!",
       sign: "— Geethu"
     },
     groomNote: {
       side: "From Abhin’s Side",
-      title: "To Our Favorite People",
-      message: "To all our buddies who know our story from day one and walked this path with us—you're not just guests, you're our family. Since both our circles are one and the same, come celebrate with your own gang!",
+      title: "To My Dearest Friends",
+      message: "To my childhood buddies, lifelong companions, and everyone who has stood beside me through every phase of growing up—you made every memory unforgettable. As our worlds unite, I can’t wait to celebrate this milestone together with all of you!",
       sign: "— Abhin"
     },
-    jointNote: "Team Bride? Team Groom? You’re simply Team Geethu & Abhin! Join us in Kozhikode for the Reception on 22 Nov and Guruvayoor for the Wedding Ceremony on 26 Nov!"
+    jointNote: "To all our friends from both sides: you are family to us. Come celebrate, reminisce cherished memories, and create new ones together as we begin our forever!"
   },
 
   // Sacred Text & Blessings
   texts: {
     elderBlessingsEng: "With the blessings of our elders,\nthe warmth of our families, and the love of our friends",
-    twoHeartsEng: "Two best friends,\none beautiful forever.",
+    twoHeartsEng: "Two hearts,\none beautiful forever.",
     greetingEnglish: "With Warm Wishes & Love",
     coupleIntroHeading: "Two Friends, One Beautiful Beginning",
-    coupleIntroTagline: "We started as great friends sharing smiles & dreams, and today we take the leap into forever together.",
-    weddingTogethernessQuote: "The greatest marriages are built on deep friendships. To all our mutual friends who've been part of our journey from the start—your presence makes our big day complete!",
+    coupleIntroTagline: "Blessed with the love of our families and the warmth of lifelong friendships.",
+    weddingTogethernessQuote: "A celebration of love is made complete by the presence of those who have known us best—our families, our childhood friends, and lifelong companions.",
     invitationHeading: "Cordially Inviting You",
-    invitationSubtitleEng: "From best friends to life partners.\nTogether with our families and our shared circle of friends, we warmly invite you from both Geethu's side & Abhin's side to celebrate our wedding and reception.",
+    invitationSubtitleEng: "Together with our families and our dearest friends from both sides,\nwe warmly invite you to celebrate our wedding and reception.",
     familyHeading: "With the blessings of our families",
     countdownHeading: "Counting the moments to our wedding...",
     locationHeading: "Locations & Directions",
-    finalBlessingEnglish: "Your presence, laughter, and blessings\nwill make our beginning even more special.",
+    finalBlessingEnglish: "Your presence, laughter, and blessings\nwill make our celebration truly complete.",
     withLove: "With Love, Geethu & Abhin"
   }
 };

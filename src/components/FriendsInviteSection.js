@@ -40,10 +40,10 @@ export function renderFriendsInviteSection() {
             <div class="friend-side-sign">${friendsInvite.brideNote.sign}</div>
           </div>
 
-          <!-- Common Gang Bridge / Heart -->
+          <!-- Lifelong Bonds Bridge -->
           <div class="friends-bridge-badge reveal-on-scroll">
-            <span class="friends-bridge-icon">🤝</span>
-            <span class="friends-bridge-text">Our Common Gang</span>
+            <span class="friends-bridge-icon">🤍</span>
+            <span class="friends-bridge-text">Lifelong Bonds</span>
           </div>
 
           <!-- Groom's Side Column -->
