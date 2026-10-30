@@ -13,17 +13,8 @@ export function renderLocationSection() {
         </div>
       </div>
 
-      <!-- Mobile Venue Switcher Tabs & Swipe Notification -->
+      <!-- Mobile Swipe Notification -->
       <div class="location-mobile-controls" aria-label="Venue switcher">
-        <div class="location-tabs-pill" role="tablist" aria-label="Select venue">
-          <button class="location-tab-btn active" data-index="0" role="tab" aria-selected="true" id="tab-venue-0">
-            <span>Ceremony Venue</span>
-          </button>
-          <button class="location-tab-btn" data-index="1" role="tab" aria-selected="false" id="tab-venue-1">
-            <span>Reception Venue</span>
-          </button>
-        </div>
-
         <div class="location-swipe-hint" id="location-swipe-hint" role="status" aria-live="polite" title="Tap or swipe to switch venue">
           <span class="swipe-hint-icon-left" id="swipe-icon-left" style="display: none;">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -132,7 +123,6 @@ export function renderLocationSection() {
 
 export function initLocationSlider() {
   const container = document.getElementById('locations-slider-container');
-  const tabs = document.querySelectorAll('.location-tab-btn');
   const swipeHint = document.getElementById('location-swipe-hint');
   const swipeText = document.getElementById('location-swipe-text');
   const iconLeft = document.getElementById('swipe-icon-left');
@@ -145,13 +135,6 @@ export function initLocationSlider() {
 
   function updateIndicator(index) {
     activeIndex = index;
-    // Update active tab button
-    tabs.forEach((tab) => {
-      const idx = parseInt(tab.getAttribute('data-index'), 10);
-      const isActive = idx === activeIndex;
-      tab.classList.toggle('active', isActive);
-      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-    });
 
     // Update swipe hint text and arrow direction
     if (swipeText) {
@@ -178,14 +161,6 @@ export function initLocationSlider() {
     }
     updateIndicator(index);
   }
-
-  // Click on tabs
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const idx = parseInt(tab.getAttribute('data-index'), 10);
-      scrollToVenue(idx, true);
-    });
-  });
 
   // Click on swipe hint notification toggles to the other venue
   if (swipeHint) {

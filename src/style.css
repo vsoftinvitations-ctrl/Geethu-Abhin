@@ -1176,14 +1176,15 @@ section {
 .events-cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
-  max-width: 1120px;
+  gap: 1.5rem;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
 @media (min-width: 860px) {
   .events-cards-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
     align-items: stretch;
   }
 }
@@ -1191,15 +1192,15 @@ section {
 .event-type-badge {
   display: inline-block;
   font-family: var(--font-serif-en);
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #7A1C2E;
   background: rgba(122, 28, 46, 0.08);
-  padding: 0.35rem 1.1rem;
+  padding: 0.26rem 0.9rem;
   border-radius: 999px;
   border: 1px solid rgba(122, 28, 46, 0.25);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.55rem;
   font-weight: 600;
 }
 
@@ -1211,23 +1212,23 @@ section {
 
 .details-traditional-date {
   font-family: var(--font-serif-en);
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   color: var(--gold-deep);
   font-weight: 600;
-  margin-top: -0.6rem;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.04em;
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  letter-spacing: 0.03em;
 }
 
 /* Invitation Main Card (Muhurtham & Reception) */
 .wedding-details-card {
   width: 100%;
-  max-width: 540px;
+  max-width: 500px;
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3.25rem) clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.35rem, 3.2vw, 2rem) clamp(1.15rem, 3vw, 1.85rem);
   text-align: center;
   border: 1.5px solid #7A1C2E;
-  box-shadow: 0 12px 36px rgba(122, 28, 46, 0.1), 0 4px 14px rgba(61, 42, 27, 0.05);
+  box-shadow: 0 8px 26px rgba(122, 28, 46, 0.08), 0 2px 8px rgba(61, 42, 27, 0.04);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1235,75 +1236,72 @@ section {
 
 .reception-details-card {
   border-color: rgba(184, 134, 11, 0.6);
-  box-shadow: 0 12px 36px rgba(184, 134, 11, 0.1), 0 4px 14px rgba(61, 42, 27, 0.05);
+  box-shadow: 0 8px 26px rgba(184, 134, 11, 0.08), 0 2px 8px rgba(61, 42, 27, 0.04);
 }
 
 .details-muhurtham-label {
   font-family: var(--font-serif-ml);
-  font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
   font-weight: 600;
   color: var(--gold-deep);
-  letter-spacing: 0.05em;
-  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
 }
 
 .details-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin: 2rem 0;
-  padding: 1.5rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem 0.85rem;
+  margin: 0.75rem 0;
+  padding: 0.75rem 0;
   border-top: 1px solid var(--gold-border-subtle);
   border-bottom: 1px solid var(--gold-border-subtle);
-}
-
-@media (min-width: 640px) {
-  .details-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .details-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.2rem;
 }
 
 .details-label {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-family: var(--font-serif-en);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-deep);
 }
 
 .details-val-primary {
   font-family: var(--font-serif-en);
-  font-size: clamp(1.2rem, 3vw, 1.45rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.18rem);
   font-weight: 600;
   color: var(--earth-brown);
+  line-height: 1.3;
 }
 
 .details-val-secondary {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--earth-brown-muted);
 }
 
 .details-venue-box {
-  margin: 1.5rem 0 2rem;
+  margin: 0.6rem 0 0.75rem;
 }
 
 .details-venue-name {
   font-family: var(--font-serif-en);
-  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
   font-weight: 600;
   color: var(--earth-brown);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.18rem;
+  line-height: 1.25;
 }
 
 .details-venue-city {
-  font-size: 1rem;
+  font-size: 0.88rem;
   color: var(--earth-brown-light);
 }
 
@@ -1311,8 +1309,15 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.wedding-details-card .btn-primary-gold,
+.wedding-details-card .btn-outline-gold {
+  padding: 0.52rem 1.2rem;
+  font-size: 0.9rem;
+  gap: 0.45rem;
 }
 
 .btn-primary-gold {
@@ -2218,55 +2223,16 @@ section {
     padding: clamp(2rem, 5vw, 2.75rem) clamp(0.75rem, 3vw, 1.25rem);
   }
 
-  /* Mobile Controls (Segmented Tabs + Animated Swipe Hint Banner) */
+  /* Mobile Controls (Animated Swipe Hint Banner) */
   .location-mobile-controls {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.35rem;
+    margin-bottom: 1.15rem;
     width: 100%;
     max-width: 420px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  /* Segmented Pill Tabs */
-  .location-tabs-pill {
-    display: flex;
-    background: rgba(245, 241, 233, 0.95);
-    border: 1px solid rgba(197, 160, 89, 0.4);
-    border-radius: 999px;
-    padding: 3.5px;
-    box-shadow: 0 4px 14px rgba(61, 42, 27, 0.06);
-    width: 100%;
-    max-width: 330px;
-  }
-
-  .location-tab-btn {
-    flex: 1;
-    background: transparent;
-    border: none;
-    padding: 7px 12px;
-    border-radius: 999px;
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--earth-brown-light);
-    cursor: pointer;
-    transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  .location-tab-btn.active {
-    background: #FFFFFF;
-    color: var(--gold-deep);
-    box-shadow: 0 2px 8px rgba(61, 42, 27, 0.12);
-    border: 1px solid rgba(197, 160, 89, 0.35);
   }
 
   /* Animated Swipe Hint Notification */
