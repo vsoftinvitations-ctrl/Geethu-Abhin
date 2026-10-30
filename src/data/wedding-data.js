@@ -173,7 +173,7 @@ export const weddingData = {
     elderBlessingsEng: "With the blessings of our elders,\nthe warmth of our families, and the love of our friends",
     twoHeartsEng: "Two hearts,\none beautiful forever.",
     greetingEnglish: "With Warm Wishes & Love",
-    coupleIntroHeading: "Two Friends, One Beautiful Beginning",
+    coupleIntroHeading: "From Friendship to Forever",
     coupleIntroTagline: "Blessed with the love of our families and the warmth of lifelong friendships.",
     weddingTogethernessQuote: "A celebration of love is made complete by the presence of those who have known us best—our families, our childhood friends, and lifelong companions.",
     invitationHeading: "Cordially Inviting You",
