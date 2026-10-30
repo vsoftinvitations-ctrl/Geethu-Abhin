@@ -31,22 +31,18 @@ export function renderLocationSection() {
       </div>
 
       <!-- Slider Container (horizontal scroll-snap on mobile, stack on desktop) -->
-      <div class="locations-slider-container" id="locations-slider-container">
+      <div class="locations-slider-container reveal-on-scroll" id="locations-slider-container">
         <div class="locations-dual-grid" id="locations-dual-grid">
           <!-- Location 1: Guruvayoor Temple (Wedding Ceremony) -->
-          <div class="kasavu-card location-card reveal-on-scroll" data-venue-index="0" id="venue-card-0">
+          <div class="kasavu-card location-card" data-venue-index="0" id="venue-card-0">
             <div class="location-card-grid">
               <div class="location-media-col">
-                <div class="location-media-bg-blur ceremony-blur" style="background-image: url('${event.venueImage || '/assets/guruvayoor.png'}');"></div>
-                <picture class="location-picture-frame">
-                  <source media="(max-width: 768px)" srcset="${event.venueImageMobile || '/assets/guru.png'}" />
-                  <img
-                    src="${event.venueImage || '/assets/guruvayoor.png'}"
-                    alt="Wedding Venue - ${event.venueName}"
-                    class="location-venue-img"
-                    loading="lazy"
-                  />
-                </picture>
+                <img
+                  src="${event.venueImage || '/assets/guruvayoor.png'}"
+                  alt="Wedding Venue - ${event.venueName}"
+                  class="location-venue-img ceremony-img"
+                  loading="lazy"
+                />
                 <div class="location-media-tag">Ceremony</div>
               </div>
 
@@ -77,14 +73,13 @@ export function renderLocationSection() {
           </div>
 
           <!-- Location 2: Snehanjali Community Hall (Reception) -->
-          <div class="kasavu-card location-card reveal-on-scroll" data-venue-index="1" id="venue-card-1">
+          <div class="kasavu-card location-card" data-venue-index="1" id="venue-card-1">
             <div class="location-card-grid">
               <div class="location-media-col">
-                <div class="location-media-bg-blur" style="background-image: url('/assets/venue-stage.jpg');"></div>
                 <img
                   src="/assets/venue-stage.jpg"
                   alt="Reception Venue - ${reception.venueName}"
-                  class="location-venue-img"
+                  class="location-venue-img reception-img"
                   loading="lazy"
                 />
                 <div class="location-media-tag reception-tag">Reception</div>
@@ -134,6 +129,7 @@ export function initLocationSlider() {
   let activeIndex = 0;
 
   function updateIndicator(index) {
+    if (activeIndex === index) return;
     activeIndex = index;
 
     // Update swipe hint text and arrow direction
@@ -170,45 +166,17 @@ export function initLocationSlider() {
     });
   }
 
-  // Scroll listener to sync indicator when user swipes
-  let scrollDebounce = null;
+  // Sync swipe hint indicator based on scroll position without fighting native physics
+  let scrollTimeout = null;
   container.addEventListener('scroll', () => {
     if (window.innerWidth > 768) return;
-    clearTimeout(scrollDebounce);
-    scrollDebounce = setTimeout(() => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
       const scrollPos = container.scrollLeft;
       const cardWidth = container.clientWidth;
       if (cardWidth <= 0) return;
-      const newIndex = Math.round(scrollPos / cardWidth);
-      if (newIndex >= 0 && newIndex < cards.length && newIndex !== activeIndex) {
-        updateIndicator(newIndex);
-      }
-    }, 60);
-  }, { passive: true });
-
-  // Touch gesture support on mobile cards
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  container.addEventListener('touchstart', (e) => {
-    if (e.touches.length === 1) {
-      touchStartX = e.touches[0].clientX;
-      touchStartY = e.touches[0].clientY;
-    }
-  }, { passive: true });
-
-  container.addEventListener('touchend', (e) => {
-    if (e.changedTouches.length === 1) {
-      const diffX = touchStartX - e.changedTouches[0].clientX;
-      const diffY = Math.abs(touchStartY - e.changedTouches[0].clientY);
-      // Horizontal swipe threshold
-      if (Math.abs(diffX) > 40 && Math.abs(diffX) > diffY) {
-        if (diffX > 0 && activeIndex === 0) {
-          scrollToVenue(1, true);
-        } else if (diffX < 0 && activeIndex === 1) {
-          scrollToVenue(0, true);
-        }
-      }
-    }
+      const newIndex = scrollPos > cardWidth * 0.4 ? 1 : 0;
+      updateIndicator(newIndex);
+    }, 50);
   }, { passive: true });
 }
