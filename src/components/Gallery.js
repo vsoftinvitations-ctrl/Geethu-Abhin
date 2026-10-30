@@ -1,11 +1,10 @@
 import { weddingData } from '../data/wedding-data.js';
 
 /**
- * Our Story — Scroll-Driven Horizontal Story Gallery
- * Inspired by cinematic wedding journals (e.g. Photopedia Weddings):
- * When the user scrolls down, the sticky section locks in view while
- * the story cards smoothly slide horizontally from right to left.
- * Once all cards are explored, vertical page scrolling seamlessly resumes.
+ * Our Story — Image Rolling During Scroll
+ * Clean, seamless Kerala Kasavu wedding aesthetic (no dark box).
+ * As the user scrolls down, the cards smoothly roll / slide horizontally
+ * across the screen, then page scrolling naturally continues down to the next section.
  */
 export function renderGallery() {
   const { galleryImages } = weddingData;
@@ -13,32 +12,31 @@ export function renderGallery() {
   const cardsHtml = galleryImages
     .map(
       (img, idx) => `
-      <article class="story-journal-card" data-index="${idx}" role="button" tabindex="0" aria-label="${img.title} - ${img.tagline}">
-        <div class="story-card-image-wrap">
+      <article class="kasavu-card story-photo-card" data-index="${idx}" role="button" tabindex="0" aria-label="${img.title} - ${img.tagline}">
+        <div class="photo-mat-frame">
+          <!-- 4 Delicate Gold Corner Photo Brackets -->
+          <span class="photo-corner corner-tl"></span>
+          <span class="photo-corner corner-tr"></span>
+          <span class="photo-corner corner-bl"></span>
+          <span class="photo-corner corner-br"></span>
+
           <img src="${img.src}" alt="${img.alt}" loading="lazy" class="story-card-img" />
-          <div class="story-card-gradient"></div>
-        </div>
 
-        <!-- Top Header: Location Pill & Date Badge -->
-        <div class="story-card-top">
-          <span class="story-card-pill">${img.location}</span>
-          <span class="story-card-date">${img.date}</span>
-        </div>
-
-        <!-- Bottom Content: Tagline, Title & Enlarge Icon -->
-        <div class="story-card-bottom">
-          <div class="story-card-meta">
-            <span class="story-card-tagline">${img.tagline}</span>
-            <h3 class="story-card-title">${img.title}</h3>
+          <div class="photo-hover-veil">
+            <button class="photo-zoom-btn" data-index="${idx}" aria-label="Enlarge photo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </button>
           </div>
-          <button class="story-card-zoom-btn" data-index="${idx}" aria-label="Enlarge photo">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              <line x1="11" y1="8" x2="11" y2="14"></line>
-              <line x1="8" y1="11" x2="14" y2="11"></line>
-            </svg>
-          </button>
+        </div>
+
+        <div class="photo-card-meta">
+          <span class="photo-chapter-badge">${img.tagline}</span>
+          <h3 class="photo-title">${img.title}</h3>
         </div>
       </article>
     `
@@ -47,28 +45,21 @@ export function renderGallery() {
 
   return `
     <section id="photo-gallery" class="story-scroll-section">
-      <!-- Tall Scroll Container for Sticky Horizontal Scroll -->
+      <!-- Tall Scroll Container for Sticky Horizontal Rolling -->
       <div class="story-scroll-container" id="story-scroll-container">
         <div class="story-sticky-viewport" id="story-sticky-viewport">
           
-          <!-- Narrative Header -->
+          <!-- Section Header (Traditional Warm Ivory & Gold) -->
           <div class="story-header-wrap">
-            <div class="story-header-left">
-              <span class="story-eyebrow">NARRATIVE JOURNALS</span>
-              <h2 class="story-main-title">Our Story &amp; Cherished Moments</h2>
-              <div class="story-scroll-hint">
-                <span class="story-hint-dot"></span>
-                <span class="story-hint-text">[Scroll down to slide horizontally]</span>
-              </div>
+            <h2 class="gallery-section-title">OUR STORY</h2>
+            <p class="gallery-subtitle">Moments captured along our path to forever</p>
+            <div class="section-divider" style="margin: 0.4rem auto 0.8rem;">
+              <img src="/assets/kerala-divider.svg" alt="Kerala Divider" width="260" height="26" />
             </div>
-
-            <!-- Scroll Progress Indicator -->
-            <div class="story-progress-wrap" aria-hidden="true">
-              <div class="story-progress-bar" id="story-progress-bar"></div>
-            </div>
+            <p class="story-scroll-hint">[Scroll down to slide moments]</p>
           </div>
 
-          <!-- Horizontal Cards Sliding Track -->
+          <!-- Horizontal Cards Rolling Track -->
           <div class="story-track-window" id="story-track-window">
             <div class="story-cards-track" id="story-cards-track">
               ${cardsHtml}
@@ -96,10 +87,9 @@ export function renderGallery() {
 export function initGalleryCarousel() {
   const scrollContainer = document.getElementById('story-scroll-container');
   const track = document.getElementById('story-cards-track');
-  const progressBar = document.getElementById('story-progress-bar');
   if (!scrollContainer || !track) return;
 
-  const cards = track.querySelectorAll('.story-journal-card');
+  const cards = track.querySelectorAll('.story-photo-card');
 
   // Lightbox elements
   const modal = document.getElementById('gallery-lightbox');
@@ -113,17 +103,16 @@ export function initGalleryCarousel() {
   let activeLightboxIndex = 0;
   const totalImages = weddingData.galleryImages.length;
 
-  // Calculate dynamic container height based on total horizontal track travel
+  // Calculate container height dynamically based on track width
   function updateScrollDistance() {
     const trackWidth = track.scrollWidth;
     const windowWidth = window.innerWidth;
-    const maxTranslate = Math.max(0, trackWidth - windowWidth + 120);
+    const maxTranslate = Math.max(0, trackWidth - windowWidth + 140);
 
-    // Give adequate vertical scroll height proportional to horizontal distance
-    const extraHeight = Math.max(maxTranslate * 1.15, window.innerHeight * 1.5);
+    // Vertical scroll distance proportional to horizontal distance
+    const extraHeight = Math.max(maxTranslate * 1.05, window.innerHeight * 1.25);
     scrollContainer.style.height = `${window.innerHeight + extraHeight}px`;
-    
-    // Trigger scroll update immediately
+
     onScroll();
   }
 
@@ -135,19 +124,15 @@ export function initGalleryCarousel() {
         const maxScroll = scrollContainer.offsetHeight - window.innerHeight;
 
         if (maxScroll > 0) {
-          // Progress from 0 (entry) to 1 (all cards traversed)
+          // Progress from 0 to 1
           const progress = Math.min(Math.max(-rect.top / maxScroll, 0), 1);
 
           const trackWidth = track.scrollWidth;
           const windowWidth = window.innerWidth;
-          const maxTranslate = Math.max(0, trackWidth - windowWidth + 120);
+          const maxTranslate = Math.max(0, trackWidth - windowWidth + 140);
           const currentX = progress * maxTranslate;
 
           track.style.transform = `translate3d(${-currentX}px, 0, 0)`;
-
-          if (progressBar) {
-            progressBar.style.width = `${progress * 100}%`;
-          }
         }
         ticking = false;
       });
@@ -158,7 +143,7 @@ export function initGalleryCarousel() {
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', updateScrollDistance);
 
-  // Mobile touch swipe support: swiping horizontally on track scrolls page vertically
+  // Mobile swipe gestures
   let touchStartX = 0;
   let touchStartY = 0;
   let isSwiping = false;
@@ -188,7 +173,6 @@ export function initGalleryCarousel() {
     isSwiping = false;
   }, { passive: true });
 
-  // Initialize after layout / images load
   setTimeout(updateScrollDistance, 100);
   window.addEventListener('load', updateScrollDistance);
 
