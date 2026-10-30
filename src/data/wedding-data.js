@@ -97,22 +97,52 @@ export const weddingData = {
     }
   ],
 
-  // Couple Photo Gallery
+  // Couple Photo Gallery & Featured Stories
   galleryImages: [
     {
       src: "/assets/couple.jpg",
+      location: "KOZHIKODE, KERALA",
+      date: "November 2026",
+      tagline: "FRIENDSHIP TO FOREVER",
+      title: "Geethu & Abhin",
       alt: "Geethu Girish Babu & Abhin A S",
-      caption: "A journey of eternal companionship"
+      caption: "A journey of eternal companionship starting from friendship to forever"
     },
     {
       src: "/assets/bride.jpg",
+      location: "KASAVU TRADITION",
+      date: "Grace & Elegance",
+      tagline: "THE RADIANT BRIDE",
+      title: "Geethu Girish Babu",
       alt: "Radiant Bride Geethu Girish Babu",
-      caption: "Radiant bride adorned in traditional Kerala Kasavu"
+      caption: "Adorned in classic Kerala Kasavu with timeless grace"
+    },
+    {
+      src: "/assets/image2.jpg",
+      location: "STANDING TOGETHER",
+      date: "Best Friends",
+      tagline: "TWO SOULS, ONE PATH",
+      title: "A Beautiful Beginning",
+      alt: "Geethu & Abhin Together",
+      caption: "Stepping into a lifetime of laughter, milestones, and companionship"
     },
     {
       src: "/assets/details.jpg",
+      location: "GURUVAYOOR, KERALA",
+      date: "1202 Vrischikam 10",
+      tagline: "SACRED MUHURTHAM",
+      title: "Divine Blessings",
       alt: "Sacred traditional wedding offerings",
-      caption: "Sacred rituals & auspicious beginnings"
+      caption: "Auspicious rituals and sacred vows at Guruvayoor Temple"
+    },
+    {
+      src: "/assets/frnd.png",
+      location: "CHERISHED MEMORIES",
+      date: "Lifelong Companions",
+      tagline: "CIRCLE OF HAPPINESS",
+      title: "With Dearest Friends",
+      alt: "Friends and Lifelong Circle",
+      caption: "Surrounded by childhood friends, school companions, and beloved circles"
     }
   ],
 
