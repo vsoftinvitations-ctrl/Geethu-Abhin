@@ -2315,10 +2315,13 @@ section {
   }
 
   @keyframes hintFloat {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0);
       opacity: 0.95;
     }
+
     50% {
       transform: translateY(-2px);
       opacity: 1;
@@ -2344,16 +2347,30 @@ section {
   }
 
   @keyframes arrowNudgeRight {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(3px); }
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(3px);
+    }
   }
 
   @keyframes arrowNudgeLeft {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(-3px); }
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(-3px);
+    }
   }
 
-  /* Slider Track on Mobile */
+  /* Compact Slider Track on Mobile */
   .locations-slider-container {
     width: 100%;
     max-width: 315px;
@@ -2398,15 +2415,7 @@ section {
     width: 100%;
   }
 
-  .location-picture-frame {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Compact Image Banner Container — Fits photo without awkward borders */
+  /* Compact Media Container — 165px height fits venue photos cleanly */
   .location-media-col {
     position: relative;
     width: 100%;
@@ -2423,7 +2432,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center 60%;
   }
 
   .location-venue-img.reception-img {
@@ -2512,21 +2521,6 @@ section {
     gap: 6px;
     border-radius: 999px;
     box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
-  }
-}
-
-@media (max-width: 400px) {
-  .location-media-col {
-    height: 195px;
-    min-height: 195px;
-  }
-
-  .location-venue-name {
-    font-size: 1.22rem;
-  }
-
-  .location-venue-detail {
-    font-size: 0.84rem;
   }
 }
 
