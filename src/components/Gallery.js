@@ -19,24 +19,13 @@ export function renderGallery() {
         <div class="kasavu-card story-stage-card">
           <!-- Left/Top: Inset Photograph Frame -->
           <div class="story-card-photo-col">
-            <div class="photo-mat-frame">
+            <div class="photo-mat-frame" data-index="${idx}" role="button" tabindex="0" aria-label="View photo ${idx + 1}">
               <span class="photo-corner corner-tl"></span>
               <span class="photo-corner corner-tr"></span>
               <span class="photo-corner corner-bl"></span>
               <span class="photo-corner corner-br"></span>
 
               <img src="${img.src}" alt="${img.alt}" loading="${idx === 0 ? 'eager' : 'lazy'}" class="story-slide-img" />
-
-              <div class="photo-hover-veil">
-                <button class="photo-zoom-btn" data-index="${idx}" aria-label="Enlarge photo">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    <line x1="11" y1="8" x2="11" y2="14"></line>
-                    <line x1="8" y1="11" x2="14" y2="11"></line>
-                  </svg>
-                </button>
-              </div>
             </div>
           </div>
 
@@ -140,7 +129,7 @@ export function initGalleryCarousel() {
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
-  const zoomBtns = document.querySelectorAll('.photo-zoom-btn');
+  const photoFrames = document.querySelectorAll('.photo-mat-frame');
 
   let activeLightboxIndex = 0;
 
@@ -265,11 +254,18 @@ export function initGalleryCarousel() {
     document.body.style.overflow = '';
   }
 
-  zoomBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
+  photoFrames.forEach((frame) => {
+    frame.addEventListener('click', (e) => {
       e.stopPropagation();
-      const idx = parseInt(btn.getAttribute('data-index'), 10) || 0;
+      const idx = parseInt(frame.getAttribute('data-index'), 10) || 0;
       openLightbox(idx);
+    });
+    frame.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const idx = parseInt(frame.getAttribute('data-index'), 10) || 0;
+        openLightbox(idx);
+      }
     });
   });
 
