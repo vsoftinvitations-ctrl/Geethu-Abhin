@@ -2133,45 +2133,24 @@ section {
 
 .location-media-col {
   flex: 1 1 48%;
-  min-height: 420px;
-  max-height: 500px;
+  min-height: 400px;
+  max-height: 480px;
   position: relative;
   overflow: hidden;
-  background: #1C120C;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.location-media-bg-blur {
-  position: absolute;
-  inset: -18px;
-  background-size: cover;
-  background-position: center;
-  filter: blur(20px) brightness(0.48);
-  opacity: 0.88;
-  transform: scale(1.15);
-  pointer-events: none;
-}
-
-.location-picture-frame {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 1;
+  background: #EDE8DE;
 }
 
 .location-venue-img {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   display: block;
   transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.28));
+}
+
+.location-venue-img.ceremony-img {
+  object-position: center 35%;
 }
 
 .location-card:hover .location-venue-img {
