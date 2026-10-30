@@ -49,6 +49,7 @@ export const weddingData = {
     venueAddress: "Guruvayoor Temple",
     city: "Guruvayur, Kerala",
     venueImage: "/assets/guruvayoor.png",
+    venueImageMobile: "/assets/guru.png",
     googleMapsUrl: "https://maps.google.com/?q=Guruvayoor+Temple,+Guruvayur,+Kerala",
     googleCalendarTitle: "Wedding Ceremony of Geethu & Abhin",
     googleCalendarDescription: "You are cordially invited with family to celebrate the wedding ceremony of Geethu Girish Babu & Abhin A S at Guruvayoor Temple, Guruvayur, Kerala (1202 Vrischikam 10).",
