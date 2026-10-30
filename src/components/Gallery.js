@@ -19,13 +19,13 @@ export function renderGallery() {
         <div class="kasavu-card story-stage-card">
           <!-- Left/Top: Inset Photograph Frame -->
           <div class="story-card-photo-col">
-            <div class="photo-mat-frame" data-index="${idx}" role="button" tabindex="0" aria-label="View photo ${idx + 1}">
+            <div class="photo-mat-frame">
               <span class="photo-corner corner-tl"></span>
               <span class="photo-corner corner-tr"></span>
               <span class="photo-corner corner-bl"></span>
               <span class="photo-corner corner-br"></span>
 
-              <img src="${img.src}" alt="${img.alt}" loading="${idx === 0 ? 'eager' : 'lazy'}" class="story-slide-img" />
+              <img src="${img.src}" alt="${img.alt}" loading="${idx === 0 ? 'eager' : 'lazy'}" class="story-slide-img" draggable="false" />
             </div>
           </div>
 
@@ -93,19 +93,6 @@ export function renderGallery() {
             </div>
           </div>
 
-        </div>
-      </div>
-
-      <!-- Full View Lightbox Modal -->
-      <div class="lightbox-modal" id="gallery-lightbox" aria-hidden="true" role="dialog">
-        <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
-        <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev" aria-label="Previous Photo">&#10094;</button>
-        <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next" aria-label="Next Photo">&#10095;</button>
-        <div class="lightbox-content">
-          <span class="lightbox-badge" id="lightbox-badge"></span>
-          <img id="lightbox-img" src="" alt="Enlarged photo" />
-          <div class="lightbox-caption" id="lightbox-caption"></div>
-        </div>
       </div>
     </section>
   `;
@@ -121,17 +108,6 @@ export function initGalleryCarousel() {
   const total = weddingData.galleryImages.length;
   if (total <= 1) return;
 
-  // Lightbox elements
-  const modal = document.getElementById('gallery-lightbox');
-  const modalImg = document.getElementById('lightbox-img');
-  const modalCaption = document.getElementById('lightbox-caption');
-  const modalBadge = document.getElementById('lightbox-badge');
-  const closeBtn = document.getElementById('lightbox-close');
-  const prevBtn = document.getElementById('lightbox-prev');
-  const nextBtn = document.getElementById('lightbox-next');
-  const photoFrames = document.querySelectorAll('.photo-mat-frame');
-
-  let activeLightboxIndex = 0;
 
   let ticking = false;
   let lastActiveIdx = -1;
@@ -223,78 +199,4 @@ export function initGalleryCarousel() {
   strip.addEventListener('touchend', () => {
     isSwiping = false;
   }, { passive: true });
-
-  // Lightbox functionality
-  function updateLightbox(idx) {
-    if (idx < 0) idx = total - 1;
-    if (idx >= total) idx = 0;
-    activeLightboxIndex = idx;
-
-    const item = weddingData.galleryImages[activeLightboxIndex];
-    if (!item) return;
-
-    modalImg.src = item.src;
-    modalImg.alt = item.alt;
-    if (modalCaption) modalCaption.textContent = `${item.tagline} — ${item.title}`;
-    if (modalBadge) modalBadge.textContent = item.location || '';
-  }
-
-  function openLightbox(idx) {
-    updateLightbox(idx);
-    if (!modal) return;
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    if (!modal) return;
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
-
-  photoFrames.forEach((frame) => {
-    frame.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const idx = parseInt(frame.getAttribute('data-index'), 10) || 0;
-      openLightbox(idx);
-    });
-    frame.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const idx = parseInt(frame.getAttribute('data-index'), 10) || 0;
-        openLightbox(idx);
-      }
-    });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      updateLightbox(activeLightboxIndex - 1);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      updateLightbox(activeLightboxIndex + 1);
-    });
-  }
-
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeLightbox();
-    });
-  }
-
-  window.addEventListener('keydown', (e) => {
-    if (!modal || !modal.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') updateLightbox(activeLightboxIndex - 1);
-    if (e.key === 'ArrowRight') updateLightbox(activeLightboxIndex + 1);
-  });
 }
