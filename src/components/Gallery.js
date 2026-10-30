@@ -1,75 +1,113 @@
 import { weddingData } from '../data/wedding-data.js';
 
 /**
- * Our Story — Image Rolling During Scroll
- * Clean, seamless Kerala Kasavu wedding aesthetic (no dark box).
- * As the user scrolls down, the cards smoothly roll / slide horizontally
- * across the screen, then page scrolling naturally continues down to the next section.
+ * Our Story — Single-Place Scroll-Driven Image Rolling Gallery
+ * Shows all images in ONE elegant, centered Kasavu showcase frame.
+ * As the user scrolls down, the viewport locks in 1 place while the images
+ * roll / slide smoothly one by one through the frame.
+ * Once all images have completed, vertical scrolling naturally continues
+ * down to the next section.
  */
 export function renderGallery() {
   const { galleryImages } = weddingData;
+  const total = galleryImages.length;
 
-  const cardsHtml = galleryImages
+  const slidesHtml = galleryImages
     .map(
       (img, idx) => `
-      <article class="kasavu-card story-photo-card" data-index="${idx}" role="button" tabindex="0" aria-label="${img.title} - ${img.tagline}">
-        <div class="photo-mat-frame">
-          <!-- 4 Delicate Gold Corner Photo Brackets -->
-          <span class="photo-corner corner-tl"></span>
-          <span class="photo-corner corner-tr"></span>
-          <span class="photo-corner corner-bl"></span>
-          <span class="photo-corner corner-br"></span>
+      <div class="story-slide-item" data-index="${idx}" role="group" aria-label="Story ${idx + 1} of ${total}">
+        <div class="kasavu-card story-stage-card">
+          <!-- Left/Top: Inset Photograph Frame -->
+          <div class="story-card-photo-col">
+            <div class="photo-mat-frame">
+              <span class="photo-corner corner-tl"></span>
+              <span class="photo-corner corner-tr"></span>
+              <span class="photo-corner corner-bl"></span>
+              <span class="photo-corner corner-br"></span>
 
-          <img src="${img.src}" alt="${img.alt}" loading="lazy" class="story-card-img" />
+              <img src="${img.src}" alt="${img.alt}" loading="${idx === 0 ? 'eager' : 'lazy'}" class="story-slide-img" />
 
-          <div class="photo-hover-veil">
-            <button class="photo-zoom-btn" data-index="${idx}" aria-label="Enlarge photo">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                <line x1="11" y1="8" x2="11" y2="14"></line>
-                <line x1="8" y1="11" x2="14" y2="11"></line>
-              </svg>
-            </button>
+              <div class="photo-hover-veil">
+                <button class="photo-zoom-btn" data-index="${idx}" aria-label="Enlarge photo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right/Bottom: Story Narrative Details -->
+          <div class="story-card-info-col">
+            <div class="story-card-meta-top">
+              <span class="story-meta-pill">${img.location}</span>
+              <span class="story-meta-date">${img.date}</span>
+            </div>
+
+            <div class="story-card-narrative">
+              <span class="story-tagline-text">${img.tagline}</span>
+              <h3 class="story-headline">${img.title}</h3>
+              <p class="story-caption-text">${img.caption}</p>
+            </div>
+
+            <div class="story-card-footer">
+              <div class="story-slide-index-tag">MOMENT ${idx + 1} OF ${total}</div>
+            </div>
           </div>
         </div>
+      </div>
+    `
+    )
+    .join('');
 
-        <div class="photo-card-meta">
-          <span class="photo-chapter-badge">${img.tagline}</span>
-          <h3 class="photo-title">${img.title}</h3>
-        </div>
-      </article>
+  const dotsHtml = galleryImages
+    .map(
+      (_, idx) => `
+      <button class="story-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}" aria-label="Go to moment ${idx + 1}"></button>
     `
     )
     .join('');
 
   return `
     <section id="photo-gallery" class="story-scroll-section">
-      <!-- Tall Scroll Container for Sticky Horizontal Rolling -->
+      <!-- Scroll container: locks viewport in 1 place while scrolling through all images -->
       <div class="story-scroll-container" id="story-scroll-container">
         <div class="story-sticky-viewport" id="story-sticky-viewport">
           
-          <!-- Section Header (Traditional Warm Ivory & Gold) -->
+          <!-- Section Header -->
           <div class="story-header-wrap">
             <h2 class="gallery-section-title">OUR STORY</h2>
             <p class="gallery-subtitle">Moments captured along our path to forever</p>
-            <div class="section-divider" style="margin: 0.4rem auto 0.8rem;">
-              <img src="/assets/kerala-divider.svg" alt="Kerala Divider" width="260" height="26" />
+            <div class="section-divider" style="margin: 0.35rem auto 0.6rem;">
+              <img src="/assets/kerala-divider.svg" alt="Kerala Divider" width="240" height="24" />
             </div>
-            <p class="story-scroll-hint">[Scroll down to slide moments]</p>
           </div>
 
-          <!-- Horizontal Cards Rolling Track -->
-          <div class="story-track-window" id="story-track-window">
-            <div class="story-cards-track" id="story-cards-track">
-              ${cardsHtml}
+          <!-- ONE Central Showcase Stage: All images display and roll in this 1 place -->
+          <div class="story-stage-wrapper">
+            <div class="story-stage-viewport" id="story-stage-viewport">
+              <div class="story-slides-strip" id="story-slides-strip">
+                ${slidesHtml}
+              </div>
+            </div>
+
+            <!-- Controls in this 1 place: Counter & Interactive Dots -->
+            <div class="story-stage-controls">
+              <span class="story-counter" id="story-counter">01 / 0${total}</span>
+              <div class="story-dots" id="story-dots">
+                ${dotsHtml}
+              </div>
+              <span class="story-scroll-hint">[Scroll down to roll moments]</span>
             </div>
           </div>
 
         </div>
       </div>
 
-      <!-- Lightbox Modal for Full View -->
+      <!-- Full View Lightbox Modal -->
       <div class="lightbox-modal" id="gallery-lightbox" aria-hidden="true" role="dialog">
         <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
         <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev" aria-label="Previous Photo">&#10094;</button>
@@ -86,10 +124,13 @@ export function renderGallery() {
 
 export function initGalleryCarousel() {
   const scrollContainer = document.getElementById('story-scroll-container');
-  const track = document.getElementById('story-cards-track');
-  if (!scrollContainer || !track) return;
+  const strip = document.getElementById('story-slides-strip');
+  const counter = document.getElementById('story-counter');
+  const dots = document.querySelectorAll('.story-dot');
+  if (!scrollContainer || !strip) return;
 
-  const cards = track.querySelectorAll('.story-photo-card');
+  const total = weddingData.galleryImages.length;
+  if (total <= 1) return;
 
   // Lightbox elements
   const modal = document.getElementById('gallery-lightbox');
@@ -99,24 +140,13 @@ export function initGalleryCarousel() {
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
+  const zoomBtns = document.querySelectorAll('.photo-zoom-btn');
 
   let activeLightboxIndex = 0;
-  const totalImages = weddingData.galleryImages.length;
-
-  // Calculate container height dynamically based on track width
-  function updateScrollDistance() {
-    const trackWidth = track.scrollWidth;
-    const windowWidth = window.innerWidth;
-    const maxTranslate = Math.max(0, trackWidth - windowWidth + 140);
-
-    // Vertical scroll distance proportional to horizontal distance
-    const extraHeight = Math.max(maxTranslate * 1.05, window.innerHeight * 1.25);
-    scrollContainer.style.height = `${window.innerHeight + extraHeight}px`;
-
-    onScroll();
-  }
 
   let ticking = false;
+  let lastActiveIdx = -1;
+
   function onScroll() {
     if (!ticking) {
       window.requestAnimationFrame(() => {
@@ -124,15 +154,31 @@ export function initGalleryCarousel() {
         const maxScroll = scrollContainer.offsetHeight - window.innerHeight;
 
         if (maxScroll > 0) {
-          // Progress from 0 to 1
+          // Progress goes strictly from 0 to 1
           const progress = Math.min(Math.max(-rect.top / maxScroll, 0), 1);
 
-          const trackWidth = track.scrollWidth;
-          const windowWidth = window.innerWidth;
-          const maxTranslate = Math.max(0, trackWidth - windowWidth + 140);
-          const currentX = progress * maxTranslate;
+          // Translate the strip horizontally so images roll through the frame
+          const translatePercent = progress * (total - 1) * 100;
+          strip.style.transform = `translate3d(${-translatePercent}%, 0, 0)`;
 
-          track.style.transform = `translate3d(${-currentX}px, 0, 0)`;
+          // Compute currently active image index
+          const activeIdx = Math.min(Math.round(progress * (total - 1)), total - 1);
+
+          if (activeIdx !== lastActiveIdx) {
+            lastActiveIdx = activeIdx;
+
+            // Update counter (e.g. 01 / 05)
+            if (counter) {
+              const currentNum = String(activeIdx + 1).padStart(2, '0');
+              const totalNum = String(total).padStart(2, '0');
+              counter.textContent = `${currentNum} / ${totalNum}`;
+            }
+
+            // Update dots
+            dots.forEach((dot, i) => {
+              dot.classList.toggle('active', i === activeIdx);
+            });
+          }
         }
         ticking = false;
       });
@@ -141,14 +187,30 @@ export function initGalleryCarousel() {
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', updateScrollDistance);
+  onScroll();
 
-  // Mobile swipe gestures
+  // Allow clicking dots to jump directly to that moment
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const targetIdx = parseInt(dot.getAttribute('data-index'), 10);
+      if (isNaN(targetIdx)) return;
+
+      const maxScroll = scrollContainer.offsetHeight - window.innerHeight;
+      const targetProgress = targetIdx / (total - 1);
+      const containerTop = scrollContainer.getBoundingClientRect().top + window.scrollY;
+      const targetScroll = containerTop + (targetProgress * maxScroll);
+
+      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    });
+  });
+
+  // Touch gesture support on mobile: swiping moves through images
   let touchStartX = 0;
   let touchStartY = 0;
   let isSwiping = false;
 
-  track.addEventListener('touchstart', (e) => {
+  strip.addEventListener('touchstart', (e) => {
     if (e.touches.length === 1) {
       touchStartX = e.touches[0].clientX;
       touchStartY = e.touches[0].clientY;
@@ -156,30 +218,27 @@ export function initGalleryCarousel() {
     }
   }, { passive: true });
 
-  track.addEventListener('touchmove', (e) => {
+  strip.addEventListener('touchmove', (e) => {
     if (!isSwiping || e.touches.length !== 1) return;
     const currentX = e.touches[0].clientX;
     const currentY = e.touches[0].clientY;
     const deltaX = touchStartX - currentX;
     const deltaY = Math.abs(touchStartY - currentY);
 
-    if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > 8) {
-      window.scrollBy({ top: deltaX * 0.9, behavior: 'auto' });
+    if (Math.abs(deltaX) > deltaY && Math.abs(deltaX) > 10) {
+      window.scrollBy({ top: deltaX * 1.2, behavior: 'auto' });
       touchStartX = currentX;
     }
   }, { passive: true });
 
-  track.addEventListener('touchend', () => {
+  strip.addEventListener('touchend', () => {
     isSwiping = false;
   }, { passive: true });
 
-  setTimeout(updateScrollDistance, 100);
-  window.addEventListener('load', updateScrollDistance);
-
-  // Lightbox interaction
+  // Lightbox functionality
   function updateLightbox(idx) {
-    if (idx < 0) idx = totalImages - 1;
-    if (idx >= totalImages) idx = 0;
+    if (idx < 0) idx = total - 1;
+    if (idx >= total) idx = 0;
     activeLightboxIndex = idx;
 
     const item = weddingData.galleryImages[activeLightboxIndex];
@@ -206,13 +265,11 @@ export function initGalleryCarousel() {
     document.body.style.overflow = '';
   }
 
-  cards.forEach((card, idx) => {
-    card.addEventListener('click', () => openLightbox(idx));
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openLightbox(idx);
-      }
+  zoomBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.getAttribute('data-index'), 10) || 0;
+      openLightbox(idx);
     });
   });
 
