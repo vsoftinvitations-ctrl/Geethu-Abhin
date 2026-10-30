@@ -11,7 +11,7 @@ import { renderKeralaVisual } from './components/KeralaVisual.js';
 import { renderCeremonyTimeline } from './components/CeremonyTimeline.js';
 import { renderCountdown, initCountdownTimer } from './components/Countdown.js';
 import { renderGallery, initGalleryCarousel } from './components/Gallery.js';
-import { renderLocationSection, initLocationSlider } from './components/LocationSection.js';
+import { renderLocationSection } from './components/LocationSection.js';
 import { renderClosingSection } from './components/ClosingSection.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initGettingMarriedSlider();
   initCountdownTimer();
   initGalleryCarousel();
-  initLocationSlider();
 
   // Setup smooth scroll-reveal animations via IntersectionObserver
   const observerOptions = {
