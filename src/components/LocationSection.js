@@ -46,13 +46,12 @@ export function renderLocationSection() {
           <div class="kasavu-card location-card reveal-on-scroll" data-venue-index="0" id="venue-card-0">
             <div class="location-card-grid">
               <div class="location-media-col">
-                <div class="location-media-bg-blur ceremony-blur" style="background-image: url('${event.venueImage || '/assets/guruvayoor.png'}');"></div>
                 <picture class="location-picture-frame">
                   <source media="(max-width: 768px)" srcset="${event.venueImageMobile || '/assets/guru.png'}" />
                   <img
                     src="${event.venueImage || '/assets/guruvayoor.png'}"
                     alt="Wedding Venue - ${event.venueName}"
-                    class="location-venue-img"
+                    class="location-venue-img ceremony-img"
                     loading="lazy"
                   />
                 </picture>
@@ -61,7 +60,7 @@ export function renderLocationSection() {
 
               <div class="location-details-col">
                 <div class="location-icon-wrapper">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
@@ -76,7 +75,7 @@ export function renderLocationSection() {
                 </div>
 
                 <a href="${event.googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary-gold" id="btn-get-wedding-directions">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
                   </svg>
                   <span>Get Directions</span>
@@ -89,11 +88,10 @@ export function renderLocationSection() {
           <div class="kasavu-card location-card reveal-on-scroll" data-venue-index="1" id="venue-card-1">
             <div class="location-card-grid">
               <div class="location-media-col">
-                <div class="location-media-bg-blur" style="background-image: url('/assets/venue-stage.jpg');"></div>
                 <img
                   src="/assets/venue-stage.jpg"
                   alt="Reception Venue - ${reception.venueName}"
-                  class="location-venue-img"
+                  class="location-venue-img reception-img"
                   loading="lazy"
                 />
                 <div class="location-media-tag reception-tag">Reception</div>
