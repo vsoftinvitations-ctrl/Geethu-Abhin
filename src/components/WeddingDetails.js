@@ -43,57 +43,7 @@ export function renderWeddingDetails() {
 
       <!-- EVENTS CARDS GRID -->
       <div class="events-cards-grid">
-        <!-- CARD 1: WEDDING CEREMONY (MUHURTHAM) -->
-        <div class="kasavu-card wedding-details-card reveal-on-scroll">
-          <div class="event-type-badge">Auspicious Ceremony</div>
-          <div class="details-muhurtham-label">${event.muhurthamLabel || 'Wedding Ceremony'}</div>
-          ${event.traditionalDate ? `<div class="details-traditional-date">${event.traditionalDate}</div>` : ''}
-
-          <div class="details-grid">
-            <!-- Date Item -->
-            <div class="details-item">
-              <span class="details-label">Date</span>
-              <span class="details-val-primary">${event.dateDisplay}</span>
-            </div>
-
-            <!-- Time Item -->
-            <div class="details-item">
-              <span class="details-label">Auspicious Muhurtham</span>
-              <span class="details-val-primary">${event.timeDisplay}</span>
-              <span class="details-val-secondary">${event.muhurthamTimeWindow}</span>
-            </div>
-          </div>
-
-          <!-- Venue Item -->
-          <div class="details-venue-box">
-            <span class="details-label">Sacred Venue</span>
-            <div class="details-venue-name">${event.venueName}</div>
-            <div class="details-venue-city">${event.city}</div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="action-buttons-group">
-            <a href="${event.googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary-gold" id="btn-view-wedding-location">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>View Location</span>
-            </a>
-
-            <a href="${weddingGCalUrl}" target="_blank" rel="noopener noreferrer" class="btn-outline-gold" id="btn-add-wedding-calendar">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-              <span>Add to Calendar</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- CARD 2: BRIDE SIDE PRE-WEDDING CELEBRATION -->
+        <!-- CARD 1: BRIDE SIDE PRE-WEDDING CELEBRATION (NOV 22) -->
         <div class="kasavu-card wedding-details-card reception-details-card reveal-on-scroll">
           <div class="event-type-badge reception-badge">Celebration Evening</div>
           <div class="details-muhurtham-label">${reception.label || 'Wedding Reception'}</div>
@@ -132,6 +82,56 @@ export function renderWeddingDetails() {
             </a>
 
             <a href="${receptionGCalUrl}" target="_blank" rel="noopener noreferrer" class="btn-outline-gold" id="btn-add-reception-calendar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Add to Calendar</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: WEDDING CEREMONY (MUHURTHAM - NOV 26) -->
+        <div class="kasavu-card wedding-details-card reveal-on-scroll">
+          <div class="event-type-badge">Auspicious Ceremony</div>
+          <div class="details-muhurtham-label">${event.muhurthamLabel || 'Wedding Ceremony'}</div>
+          ${event.traditionalDate ? `<div class="details-traditional-date">${event.traditionalDate}</div>` : ''}
+
+          <div class="details-grid">
+            <!-- Date Item -->
+            <div class="details-item">
+              <span class="details-label">Date</span>
+              <span class="details-val-primary">${event.dateDisplay}</span>
+            </div>
+
+            <!-- Time Item -->
+            <div class="details-item">
+              <span class="details-label">Auspicious Muhurtham</span>
+              <span class="details-val-primary">${event.timeDisplay}</span>
+              <span class="details-val-secondary">${event.muhurthamTimeWindow}</span>
+            </div>
+          </div>
+
+          <!-- Venue Item -->
+          <div class="details-venue-box">
+            <span class="details-label">Sacred Venue</span>
+            <div class="details-venue-name">${event.venueName}</div>
+            <div class="details-venue-city">${event.city}</div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-buttons-group">
+            <a href="${event.googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary-gold" id="btn-view-wedding-location">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>View Location</span>
+            </a>
+
+            <a href="${weddingGCalUrl}" target="_blank" rel="noopener noreferrer" class="btn-outline-gold" id="btn-add-wedding-calendar">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
