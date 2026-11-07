@@ -2,10 +2,8 @@ import { weddingData } from '../data/wedding-data.js';
 
 /**
  * Getting Married Section
- * Layout: Horizontal Split Card with Photographic Smooth Crossfade Slider
- * 1st image: /assets/image2.jpg
- * 2nd image: /assets/image.png
- * 3rd image: /assets/image3.png
+ * Layout: Horizontal Split Card with Couple Portrait
+ * Image: /assets/couple.jpg
  */
 export function renderGettingMarriedSection() {
   const { bride, groom } = weddingData;
@@ -17,35 +15,15 @@ export function renderGettingMarriedSection() {
     <section class="getting-married-section" id="getting-married">
       <div class="getting-married-wrapper">
         <div class="getting-married-card reveal-on-scroll">
-          <!-- Left: Couple Portrait Crossfade Slider -->
-          <div class="getting-married-media" id="getting-married-slider" role="region" aria-label="Couple Photos - Click to transition">
+          <!-- Left: Couple Portrait Image -->
+          <div class="getting-married-media" id="getting-married-slider" role="region" aria-label="Couple Portrait">
             <img
-              src="/assets/image2.jpg"
-              alt="${brideDisplay} &amp; ${groomDisplay} - Standing Portrait"
+              src="/assets/couple.jpg"
+              alt="${brideDisplay} &amp; ${groomDisplay} - Couple Portrait"
               class="getting-married-photo getting-married-slide active"
               data-slide="0"
               loading="eager"
             />
-            <img
-              src="/assets/image.png"
-              alt="${brideDisplay} &amp; ${groomDisplay} - Close-up Portrait"
-              class="getting-married-photo getting-married-slide"
-              data-slide="1"
-              loading="lazy"
-            />
-            <img
-              src="/assets/image3.png"
-              alt="${brideDisplay} &amp; ${groomDisplay} - Together Portrait"
-              class="getting-married-photo getting-married-slide"
-              data-slide="2"
-              loading="lazy"
-            />
-            <!-- Subtle slide indicators -->
-            <div class="getting-married-indicators" aria-label="Photo slider controls">
-              <button class="slider-dot active" data-index="0" aria-label="Photo 1"></button>
-              <button class="slider-dot" data-index="1" aria-label="Photo 2"></button>
-              <button class="slider-dot" data-index="2" aria-label="Photo 3"></button>
-            </div>
           </div>
 
           <!-- Right: Text & Names -->

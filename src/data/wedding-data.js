@@ -101,71 +101,33 @@ export const weddingData = {
   // Couple Photo Gallery & Featured Stories
   galleryImages: [
     {
-      src: "/assets/couple.jpg",
-      location: "KOZHIKODE, KERALA",
-      date: "November 2026",
-      tagline: "FRIENDSHIP TO FOREVER",
-      title: "Geethu & Abhin",
-      alt: "Geethu Girish Babu & Abhin A S",
-      caption: "A journey of eternal companionship starting from friendship to forever"
+      src: "/assets/story.png",
+      alt: "Geethu & Abhin - Our Story"
     },
     {
-      src: "/assets/bride.jpg",
-      location: "KASAVU TRADITION",
-      date: "Grace & Elegance",
-      tagline: "THE RADIANT BRIDE",
-      title: "Geethu Girish Babu",
-      alt: "Radiant Bride Geethu Girish Babu",
-      caption: "Adorned in classic Kerala Kasavu with timeless grace"
-    },
-    {
-      src: "/assets/image2.jpg",
-      location: "STANDING TOGETHER",
-      date: "Best Friends",
-      tagline: "TWO SOULS, ONE PATH",
-      title: "A Beautiful Beginning",
-      alt: "Geethu & Abhin Together",
-      caption: "Stepping into a lifetime of laughter, milestones, and companionship"
-    },
-    {
-      src: "/assets/details.jpg",
-      location: "GURUVAYOOR, KERALA",
-      date: "1202 Vrischikam 10",
-      tagline: "SACRED MUHURTHAM",
-      title: "Divine Blessings",
-      alt: "Sacred traditional wedding offerings",
-      caption: "Auspicious rituals and sacred vows at Guruvayoor Temple"
+      src: "/assets/story1.png",
+      alt: "Geethu & Abhin - Cherished Moments"
     },
     {
       src: "/assets/frnd.png",
-      location: "CHERISHED MEMORIES",
-      date: "Lifelong Companions",
-      tagline: "CIRCLE OF HAPPINESS",
-      title: "With Dearest Friends",
-      alt: "Friends and Lifelong Circle",
-      caption: "Surrounded by childhood friends, school companions, and beloved circles"
+      alt: "With Dearest Friends & Family"
+    },
+    {
+      src: "/assets/couple.jpg",
+      alt: "Geethu & Abhin Together"
     }
   ],
 
-  // Friends & Lifelong Companions Invitation
+  // Family & Friends Invitation (Unified From Both Sides)
   friendsInvite: {
-    badge: "From The Bride's Side & The Groom's Side",
-    heading: "To All Our Cherished Friends",
-    subtitle: "To our childhood friends, school companions, and every dear soul who walked this journey with us",
-    quote: "“Friends are the family we choose along the way. From childhood memories and classroom laughter to life's sweetest milestones, each of you holds an irreplaceable place in our story.”",
-    brideNote: {
-      side: "From Geethu’s Side",
-      title: "To My Dearest Friends",
-      message: "To the friends who have known me since childhood, shared my growing years, laughter, and milestones, and to every wonderful friend who has been part of my life—having your blessings as I begin this new chapter with my best friend means everything to me!",
-      sign: "— Geethu"
-    },
-    groomNote: {
-      side: "From Abhin’s Side",
-      title: "To My Dearest Friends",
-      message: "To my childhood buddies, lifelong companions, and everyone who has stood beside me through every phase of growing up—you made every memory unforgettable. As our worlds unite, I can’t wait to celebrate this milestone together with all of you!",
-      sign: "— Abhin"
-    },
-    jointNote: "To all our friends from both sides: you are family to us. Come celebrate, reminisce cherished memories, and create new ones together as we begin our forever!"
+    heading: "To All Our Cherished Family & Friends",
+    subtitle: "To our beloved elders, dear relatives, childhood companions, and every soul who has shared this journey with us",
+    note: {
+      tag: "With Love From Both Families",
+      title: "Cordially Inviting You With Family",
+      message: "To our dearest family and friends who have filled our lives with boundless love, laughter, and cherished memories. From our childhood days to this sacred celebration, each of you holds an irreplaceable place in our hearts. As two best friends embark on this lifelong journey together, we warmly invite you and your family to celebrate our wedding and reception. Having your presence, blessings, and love with us as we begin our forever means everything to us!",
+      sign: "Geethu — Abhin"
+    }
   },
 
   // Sacred Text & Blessings
@@ -177,7 +139,7 @@ export const weddingData = {
     coupleIntroTagline: "Blessed with the love of our families and the warmth of lifelong friendships.",
     weddingTogethernessQuote: "A celebration of love is made complete by the presence of those who have known us best—our families, our childhood friends, and lifelong companions.",
     invitationHeading: "Cordially Inviting You",
-    invitationSubtitleEng: "Together with our families and our dearest friends from both sides,\nwe warmly invite you to celebrate our wedding and reception.",
+    invitationSubtitleEng: "Together with our families,\nwe warmly invite you to celebrate our wedding and reception.",
     familyHeading: "With the blessings of our families",
     countdownHeading: "Counting the moments to our wedding...",
     locationHeading: "Locations & Directions",

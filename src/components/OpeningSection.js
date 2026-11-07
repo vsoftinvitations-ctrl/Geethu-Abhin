@@ -17,7 +17,7 @@ export function renderOpeningSection() {
 
           <!-- Elegant Standard Invitation Line -->
           <p class="opening-blessing-en reveal-on-scroll revealed reveal-delay-1">
-            Together with our families and our dearest friends from both sides,<br />
+            Together with our families,<br />
             we joyfully invite you to celebrate the wedding of
           </p>
 

@@ -35,9 +35,7 @@ export function renderPreloader() {
             <span class="preloader-tagline">WEDDING INVITATION</span>
           </div>
           <button class="preloader-open-pill-btn ready-pulse" id="preloader-enter-btn" aria-label="Tap to Open Invitation">
-            <span class="btn-sparkle">✦</span>
             <span>Tap to Open</span>
-            <span class="btn-sparkle">✦</span>
           </button>
         </div>
       </div>
@@ -105,51 +103,13 @@ export function initPreloader() {
     document.fonts.load('48px "Brittany Signature"').catch(() => {});
   }
 
-  let stage = 'waiting'; // 'waiting' | 'revealing' | 'dismissed'
-  let autoDismissTimer = null;
+  let isDismissed = false;
 
-  function handleTapToOpen() {
-    if (stage !== 'waiting') {
-      // If user taps again while names are revealing, immediately reveal the inner side
-      if (stage === 'revealing') {
-        dismissPreloader();
-      }
-      return;
-    }
+  function openInvitation() {
+    if (isDismissed) return;
+    isDismissed = true;
 
-    stage = 'revealing';
-
-    // 1. User gesture unlocks audio playback immediately
-    startBackgroundMusic();
-
-    // 2. Start handwriting name reveal animation on background image
-    preloader.classList.add('preloader-animating');
-
-    // 3. Golden shimmer sweep on signature after writing finishes (5.5s)
-    setTimeout(() => {
-      const scriptBox = document.getElementById('preloader-script-box');
-      if (scriptBox) {
-        scriptBox.classList.add('shimmer-active');
-        scriptBox.querySelectorAll('.script-text').forEach((el) => {
-          el.style.clipPath = 'none';
-          el.style.opacity = '1';
-          el.style.visibility = 'visible';
-        });
-      }
-    }, 5500);
-
-    // 4. Leisurely pause to enjoy the sweet violin melody and names, then smoothly reveal the inner side (8.0s)
-    autoDismissTimer = setTimeout(() => {
-      dismissPreloader();
-    }, 8000);
-  }
-
-  function dismissPreloader() {
-    if (stage === 'dismissed') return;
-    stage = 'dismissed';
-    if (autoDismissTimer) clearTimeout(autoDismissTimer);
-
-    // Ensure music is active
+    // Ensure music is active upon user interaction
     startBackgroundMusic();
 
     preloader.classList.add('preloader-fade-out');
@@ -162,23 +122,19 @@ export function initPreloader() {
     }, 1850);
   }
 
-  // Click on "Tap to Open" button or anywhere on screen
+  // Only clicking the "Tap to Open" button opens the invitation
   const enterBtn = document.getElementById('preloader-enter-btn');
   if (enterBtn) {
     enterBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      handleTapToOpen();
+      openInvitation();
     });
   }
-
-  preloader.addEventListener('click', () => {
-    handleTapToOpen();
-  });
 
   // Also support keyboard Enter/Space/Escape
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
-      handleTapToOpen();
+      openInvitation();
     }
   });
 }

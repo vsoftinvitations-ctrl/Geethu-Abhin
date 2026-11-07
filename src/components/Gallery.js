@@ -15,9 +15,9 @@ export function renderGallery() {
   const slidesHtml = galleryImages
     .map(
       (img, idx) => `
-      <div class="story-slide-item" data-index="${idx}" role="group" aria-label="Story ${idx + 1} of ${total}">
+      <div class="story-slide-item" data-index="${idx}" role="group" aria-label="Photo ${idx + 1} of ${total}">
         <div class="kasavu-card story-stage-card">
-          <!-- Left/Top: Inset Photograph Frame -->
+          <!-- Inset Photograph Frame -->
           <div class="story-card-photo-col">
             <div class="photo-mat-frame">
               <span class="photo-corner corner-tl"></span>
@@ -25,25 +25,7 @@ export function renderGallery() {
               <span class="photo-corner corner-bl"></span>
               <span class="photo-corner corner-br"></span>
 
-              <img src="${img.src}" alt="${img.alt}" loading="${idx === 0 ? 'eager' : 'lazy'}" class="story-slide-img" draggable="false" />
-            </div>
-          </div>
-
-          <!-- Right/Bottom: Story Narrative Details -->
-          <div class="story-card-info-col">
-            <div class="story-card-meta-top">
-              <span class="story-meta-pill">${img.location}</span>
-              <span class="story-meta-date">${img.date}</span>
-            </div>
-
-            <div class="story-card-narrative">
-              <span class="story-tagline-text">${img.tagline}</span>
-              <h3 class="story-headline">${img.title}</h3>
-              <p class="story-caption-text">${img.caption}</p>
-            </div>
-
-            <div class="story-card-footer">
-              <div class="story-slide-index-tag">MOMENT ${idx + 1} OF ${total}</div>
+              <img src="${img.src}" alt="${img.alt || 'Our Story Photo'}" loading="${idx === 0 ? 'eager' : 'lazy'}" class="story-slide-img" draggable="false" />
             </div>
           </div>
         </div>

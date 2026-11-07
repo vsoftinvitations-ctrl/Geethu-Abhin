@@ -522,7 +522,7 @@ section {
   box-shadow: 0 20px 55px rgba(61, 42, 27, 0.12), 0 4px 14px rgba(184, 155, 94, 0.12);
 }
 
-/* Left: Couple Portrait Image / Crossfade Slider */
+/* Left: Couple Portrait Image */
 .getting-married-media {
   flex: 1 1 52%;
   min-height: 420px;
@@ -530,7 +530,7 @@ section {
   position: relative;
   overflow: hidden;
   background: #2D221E;
-  cursor: pointer;
+  cursor: default;
 }
 
 .getting-married-slide {
@@ -995,6 +995,122 @@ section {
   margin: 0 auto 2.5rem;
   line-height: 1.65;
   text-shadow: 0 1px 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Unified Single Invitation Card From Both Sides */
+.friend-unified-box {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(2.2rem, 4.5vw, 3.2rem) clamp(1.5rem, 4vw, 2.8rem);
+  border-radius: 16px;
+  background: rgba(255, 253, 249, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(197, 160, 89, 0.4);
+  box-shadow: 0 10px 30px rgba(61, 42, 27, 0.06), 0 0 15px rgba(197, 160, 89, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.friend-unified-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7A1C2E 0%, var(--gold-deep) 50%, #7A1C2E 100%);
+}
+
+.friend-unified-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 38px rgba(61, 42, 27, 0.1), 0 0 20px rgba(197, 160, 89, 0.16);
+}
+
+.friend-unified-header {
+  margin-bottom: 1.25rem;
+}
+
+.friend-unified-tag {
+  display: inline-block;
+  font-family: var(--font-serif-en);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-deep);
+  background: rgba(184, 134, 11, 0.08);
+  border: 1px solid rgba(184, 134, 11, 0.28);
+  padding: 0.35rem 1.15rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.friend-unified-title {
+  font-family: var(--font-serif-en);
+  font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+  font-weight: 600;
+  color: var(--earth-brown);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.friend-unified-message {
+  font-family: var(--font-serif-en);
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-style: italic;
+  color: var(--earth-brown);
+  line-height: 1.8;
+  max-width: 680px;
+  margin: 0 auto 1.8rem;
+}
+
+.friend-unified-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 240px;
+  margin: 0 auto 1.25rem;
+}
+
+.friend-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-antique), transparent);
+}
+
+.friend-divider-icon {
+  font-size: 1.1rem;
+  color: var(--gold-deep);
+}
+
+.friend-unified-sign-block {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.friend-sign-tag {
+  font-family: var(--font-serif-en);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--earth-brown-light);
+  font-weight: 500;
+}
+
+.friend-unified-names {
+  font-family: 'Brittany Signature', var(--font-script), cursive;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  color: var(--gold-deep);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .friends-dual-grid {
@@ -1770,7 +1886,7 @@ section {
 /* ONE Centered Showcase Stage in 1 Place */
 .story-stage-wrapper {
   width: 100%;
-  max-width: 860px;
+  max-width: 500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1805,25 +1921,28 @@ section {
 .story-stage-card {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding: clamp(1.25rem, 3vw, 2.25rem);
-  gap: clamp(1.5rem, 3.5vw, 2.75rem);
+  padding: clamp(0.75rem, 2vw, 1.25rem);
   background: transparent;
   border: none;
   box-shadow: none;
   border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Photo Column */
 .story-card-photo-col {
-  flex: 0 0 46%;
-  width: 46%;
+  flex: 0 0 100%;
+  width: 100%;
 }
 
 .photo-mat-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 4/5;
+  max-height: clamp(360px, 58vh, 520px);
   border-radius: 12px;
   overflow: hidden;
   background: #EFEBE4;
@@ -2028,42 +2147,26 @@ section {
 
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
+  .story-stage-wrapper {
+    max-width: min(88vw, 380px);
+  }
+
   .story-stage-card {
-    flex-direction: column;
-    padding: 1.25rem;
-    gap: 1rem;
+    padding: 0.65rem;
   }
 
   .story-card-photo-col {
     width: 100%;
-    max-height: 280px;
+    max-height: none;
   }
 
   .photo-mat-frame {
-    aspect-ratio: 16/11;
-    max-height: 280px;
+    aspect-ratio: 4/5;
+    max-height: clamp(300px, 54vh, 420px);
   }
 
   .story-slide-img {
-    object-position: center 12%;
-  }
-
-  .story-card-info-col {
-    text-align: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .story-card-meta-top {
-    justify-content: center;
-  }
-
-  .story-headline {
-    font-size: 1.45rem;
-  }
-
-  .story-caption-text {
-    font-size: 0.92rem;
+    object-position: center 15%;
   }
 
   .story-scroll-hint {
@@ -3157,7 +3260,8 @@ body.preloader-active #app>*:not(#wedding-preloader) {
   justify-content: center;
   z-index: 25;
   transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
 }
 
 .preloader-gate-content {
@@ -3168,6 +3272,7 @@ body.preloader-active #app>*:not(#wedding-preloader) {
   gap: 1.4rem;
   text-align: center;
   padding: 1.5rem;
+  pointer-events: auto;
 }
 
 .preloader-gate-badge {
