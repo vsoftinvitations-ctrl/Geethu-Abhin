@@ -2275,6 +2275,12 @@ section {
   background: #EDE8DE;
 }
 
+.location-venue-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .location-venue-img {
   width: 100%;
   height: 100%;
@@ -2503,6 +2509,12 @@ section {
     display: block;
   }
 
+  .location-venue-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
   .location-venue-img {
     display: block;
     width: 100%;
@@ -2511,7 +2523,7 @@ section {
   }
 
   .location-venue-img.ceremony-img {
-    object-position: center 60%;
+    object-position: center center;
   }
 
   .location-venue-img.reception-img {

@@ -37,12 +37,15 @@ export function renderLocationSection() {
           <div class="kasavu-card location-card" data-venue-index="0" id="venue-card-0">
             <div class="location-card-grid">
               <div class="location-media-col">
-                <img
-                  src="${event.venueImage || '/assets/guruvayoor.png'}"
-                  alt="Wedding Venue - ${event.venueName}"
-                  class="location-venue-img ceremony-img"
-                  loading="lazy"
-                />
+                <picture class="location-venue-picture">
+                  <source media="(max-width: 768px)" srcset="${event.venueImageMobile || '/assets/guru.png'}" />
+                  <img
+                    src="${event.venueImage || '/assets/guruvayoor.png'}"
+                    alt="Wedding Venue - ${event.venueName}"
+                    class="location-venue-img ceremony-img"
+                    loading="lazy"
+                  />
+                </picture>
                 <div class="location-media-tag">Ceremony</div>
               </div>
 
