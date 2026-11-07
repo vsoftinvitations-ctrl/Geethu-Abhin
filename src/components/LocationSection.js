@@ -1,13 +1,20 @@
 import { weddingData } from '../data/wedding-data.js';
 
 export function renderLocationSection() {
-  const { texts, event, reception } = weddingData;
+  const { texts, event, reception, groomReception } = weddingData;
+
+  const groomVenue = groomReception || {
+    venueName: "Royal Convention Centre",
+    venueAddress: "Neduvathoor",
+    city: "Kottarakara, Kerala",
+    googleMapsUrl: "https://maps.google.com/?q=Royal+Convention+Centre,+Neduvathoor,+Kottarakara,+Kerala"
+  };
 
   return `
     <section id="location-section" class="location-section">
       <div class="location-section-header reveal-on-scroll">
         <h2 class="location-title-en">${texts.locationHeading || 'Locations & Directions'}</h2>
-        <p class="location-subtitle-en">Join us to celebrate in Guruvayur and Kozhikode</p>
+        <p class="location-subtitle-en">Join us to celebrate in Guruvayur, Kozhikode and Kottarakara</p>
         <div class="section-divider" style="margin-top: 0.75rem; margin-bottom: 2rem;">
           <img src="/assets/kerala-divider.svg" alt="Kerala Divider" width="240" height="24" />
         </div>
@@ -21,7 +28,7 @@ export function renderLocationSection() {
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </span>
-          <span class="swipe-hint-text" id="location-swipe-text">Swipe left for Reception Venue</span>
+          <span class="swipe-hint-text" id="location-swipe-text">Swipe left for Bride Side Reception (1/3)</span>
           <span class="swipe-hint-icon-right" id="swipe-icon-right">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="9 18 15 12 9 6"></polyline>
@@ -75,17 +82,17 @@ export function renderLocationSection() {
             </div>
           </div>
 
-          <!-- Location 2: Snehanjali Community Hall (Reception) -->
+          <!-- Location 2: Snehanjali Community Hall (Bride Side Reception) -->
           <div class="kasavu-card location-card" data-venue-index="1" id="venue-card-1">
             <div class="location-card-grid">
               <div class="location-media-col">
                 <img
                   src="/assets/venue-stage.jpg"
-                  alt="Reception Venue - ${reception.venueName}"
+                  alt="Bride Side Reception Venue - ${reception.venueName}"
                   class="location-venue-img reception-img"
                   loading="lazy"
                 />
-                <div class="location-media-tag reception-tag">Reception</div>
+                <div class="location-media-tag reception-tag">Bride Side</div>
               </div>
 
               <div class="location-details-col">
@@ -96,7 +103,7 @@ export function renderLocationSection() {
                   </svg>
                 </div>
 
-                <div class="location-badge reception-loc-badge">Reception Venue</div>
+                <div class="location-badge reception-loc-badge">Bride Side Reception Venue</div>
                 <div class="location-venue-name">${reception.venueName}</div>
                 <div class="location-venue-detail">
                   ${reception.venueAddress},
@@ -105,6 +112,45 @@ export function renderLocationSection() {
                 </div>
 
                 <a href="${reception.googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary-gold" id="btn-get-reception-directions">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                  </svg>
+                  <span>Get Directions</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location 3: Royal Convention Centre (Groom Side Reception) -->
+          <div class="kasavu-card location-card" data-venue-index="2" id="venue-card-2">
+            <div class="location-card-grid">
+              <div class="location-media-col">
+                <img
+                  src="/assets/venue-stage.jpg"
+                  alt="Groom Side Reception Venue - ${groomVenue.venueName}"
+                  class="location-venue-img reception-img"
+                  loading="lazy"
+                />
+                <div class="location-media-tag reception-tag">Groom Side</div>
+              </div>
+
+              <div class="location-details-col">
+                <div class="location-icon-wrapper">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+
+                <div class="location-badge reception-loc-badge">Groom Side Reception Venue</div>
+                <div class="location-venue-name">${groomVenue.venueName}</div>
+                <div class="location-venue-detail">
+                  ${groomVenue.venueAddress},
+                  <br />
+                  ${groomVenue.city}
+                </div>
+
+                <a href="${groomVenue.googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary-gold" id="btn-get-groom-directions">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
                   </svg>
@@ -131,21 +177,19 @@ export function initLocationSlider() {
 
   let activeIndex = 0;
 
-  function updateIndicator(index) {
-    if (activeIndex === index) return;
-    activeIndex = index;
+  const hintMessages = [
+    { text: 'Swipe left for Bride Side Reception (1/3)', left: false, right: true },
+    { text: 'Swipe left for Groom Side Reception (2/3)', left: true, right: true },
+    { text: 'Swipe right for Ceremony Venue (3/3)', left: true, right: false }
+  ];
 
-    // Update swipe hint text and arrow direction
-    if (swipeText) {
-      if (activeIndex === 0) {
-        swipeText.textContent = 'Swipe left for Reception Venue';
-        if (iconLeft) iconLeft.style.display = 'none';
-        if (iconRight) iconRight.style.display = 'inline-flex';
-      } else {
-        swipeText.textContent = 'Swipe right for Ceremony Venue';
-        if (iconLeft) iconLeft.style.display = 'inline-flex';
-        if (iconRight) iconRight.style.display = 'none';
-      }
+  function updateIndicator(index) {
+    activeIndex = Math.max(0, Math.min(index, cards.length - 1));
+
+    if (swipeText && hintMessages[activeIndex]) {
+      swipeText.textContent = hintMessages[activeIndex].text;
+      if (iconLeft) iconLeft.style.display = hintMessages[activeIndex].left ? 'inline-flex' : 'none';
+      if (iconRight) iconRight.style.display = hintMessages[activeIndex].right ? 'inline-flex' : 'none';
     }
   }
 
@@ -161,10 +205,10 @@ export function initLocationSlider() {
     updateIndicator(index);
   }
 
-  // Click on swipe hint notification toggles to the other venue
+  // Click on swipe hint notification cycles to the next venue
   if (swipeHint) {
     swipeHint.addEventListener('click', () => {
-      const nextIdx = activeIndex === 0 ? 1 : 0;
+      const nextIdx = (activeIndex + 1) % cards.length;
       scrollToVenue(nextIdx, true);
     });
   }
@@ -178,7 +222,7 @@ export function initLocationSlider() {
       const scrollPos = container.scrollLeft;
       const cardWidth = container.clientWidth;
       if (cardWidth <= 0) return;
-      const newIndex = scrollPos > cardWidth * 0.4 ? 1 : 0;
+      const newIndex = Math.min(cards.length - 1, Math.max(0, Math.round(scrollPos / cardWidth)));
       updateIndicator(newIndex);
     }, 50);
   }, { passive: true });
