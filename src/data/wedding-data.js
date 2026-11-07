@@ -57,7 +57,7 @@ export const weddingData = {
     targetCountdownDate: "2026-11-26T07:00:00"
   },
 
-  // Reception Details
+  // Reception Details (Bride side)
   reception: {
     label: "Wedding Reception",
     traditionalDate: "Pre-Wedding Celebration from Bride side",
@@ -69,6 +69,20 @@ export const weddingData = {
     googleMapsUrl: "https://maps.google.com/?q=Snehanjali+Community+Hall,+Kallayi+Road,+Kozhikode,+Kerala",
     googleCalendarTitle: "Wedding Reception of Geethu & Abhin",
     googleCalendarDescription: "You are cordially invited with family to celebrate the wedding reception of Geethu Girish Babu & Abhin A S at Snehanjali Community Hall, Kallayi Road, Kozhikode, Kerala."
+  },
+
+  // Reception Details (Groom side)
+  groomReception: {
+    label: "Wedding Reception",
+    traditionalDate: "Groom side Reception",
+    dateDisplay: "Saturday, 28 November 2026",
+    timeDisplay: "3:30 PM – 8:30 PM",
+    venueName: "Royal Convention Centre",
+    venueAddress: "Neduvathoor",
+    city: "Kottarakara, Kerala",
+    googleMapsUrl: "https://maps.google.com/?q=Royal+Convention+Centre,+Neduvathoor,+Kottarakara,+Kerala",
+    googleCalendarTitle: "Groom side Reception of Geethu & Abhin",
+    googleCalendarDescription: "You are cordially invited with family to celebrate the Groom side Reception of Geethu Girish Babu & Abhin A S at Royal Convention Centre, Neduvathoor, Kottarakara, Kerala."
   },
 
   // Sacred Ceremonies Timeline

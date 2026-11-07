@@ -1270,13 +1270,14 @@ section {
   margin: 0 auto 2.5rem;
 }
 
-.invitation-title-ml {
+.invitation-title-ml,
+.invitation-title-en {
   font-family: var(--font-serif-ml);
   font-size: clamp(1.35rem, 3.8vw, 2rem);
   font-weight: 500;
   color: var(--earth-brown);
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 0.65rem;
+  line-height: 1.4;
 }
 
 .invitation-subtitle-en {
@@ -1288,20 +1289,41 @@ section {
   white-space: pre-line;
 }
 
-/* Events Dual Cards Grid */
+.invitation-details-section {
+  max-width: 1240px;
+}
+
+/* Events Cards Grid (1, 2, or 3 cards) */
 .events-cards-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  max-width: 1040px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 768px) and (max-width: 1079px) {
   .events-cards-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.75rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 860px;
+  }
+  .events-cards-grid > .wedding-details-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 440px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1080px) {
+  .events-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
     align-items: stretch;
+  }
+  .events-cards-grid .wedding-details-card {
+    padding: 1.75rem 1.15rem;
   }
 }
 
