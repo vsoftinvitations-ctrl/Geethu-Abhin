@@ -116,7 +116,7 @@ export const weddingData = {
   // Couple Photo Gallery & Featured Stories
   galleryImages: [
     {
-      src: "/assets/story.png",
+      src: "/assets/image.png",
       alt: "Geethu & Abhin - Our Story"
     },
     {
@@ -126,10 +126,6 @@ export const weddingData = {
     {
       src: "/assets/frnd.png",
       alt: "With Dearest Friends & Family"
-    },
-    {
-      src: "/assets/couple.jpg",
-      alt: "Geethu & Abhin Together"
     }
   ],
 
