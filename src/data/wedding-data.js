@@ -10,7 +10,7 @@ export const weddingData = {
     shortName: "Geethu",
     qualifications: "",
     image: "/assets/bride.jpg",
-    bio: "Daughter of our beloved family, taking the hand of her best friend and partner to begin a lifetime of joy and togetherness.",
+    bio: "",
     parents: {
       father: "Girish Babu P",
       mother: "Sujitha Girish Babu",
@@ -26,7 +26,7 @@ export const weddingData = {
     shortName: "Abhin",
     qualifications: "",
     image: null,
-    bio: "Son of our esteemed family, blessed to start this divine voyage of love and companionship with his closest friend.",
+    bio: "",
     parents: {
       father: "Anilkumar S.S",
       mother: "Sudhakumari V.S",
