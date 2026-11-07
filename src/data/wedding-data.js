@@ -116,11 +116,11 @@ export const weddingData = {
   // Couple Photo Gallery & Featured Stories
   galleryImages: [
     {
-      src: "/assets/image.png",
+      src: "/assets/story1.png",
       alt: "Geethu & Abhin - Our Story"
     },
     {
-      src: "/assets/story1.png",
+      src: "/assets/image.png",
       alt: "Geethu & Abhin - Cherished Moments"
     },
     {
