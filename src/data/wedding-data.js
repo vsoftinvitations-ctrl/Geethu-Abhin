@@ -6,7 +6,7 @@
 export const weddingData = {
   // Couple Information
   bride: {
-    name: "Geethu Girish Babu",
+    name: "Geethu",
     shortName: "Geethu",
     qualifications: "",
     image: "/assets/bride.jpg",
@@ -52,7 +52,7 @@ export const weddingData = {
     venueImageMobile: "/assets/guru.png",
     googleMapsUrl: "https://maps.google.com/?q=Guruvayoor+Temple,+Guruvayur,+Kerala",
     googleCalendarTitle: "Wedding Ceremony of Geethu & Abhin",
-    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding ceremony of Geethu Girish Babu & Abhin A S at Guruvayoor Temple, Guruvayur, Kerala (1202 Vrischikam 10).",
+    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding ceremony of Geethu & Abhin A S at Guruvayoor Temple, Guruvayur, Kerala (1202 Vrischikam 10).",
     // Target ISO date for the live countdown timer (YYYY-MM-DDTHH:mm:ss)
     targetCountdownDate: "2026-11-26T07:00:00"
   },
@@ -68,7 +68,7 @@ export const weddingData = {
     city: "Kozhikode, Kerala",
     googleMapsUrl: "https://maps.google.com/?q=Snehanjali+Community+Hall,+Kallayi+Road,+Kozhikode,+Kerala",
     googleCalendarTitle: "Wedding Reception of Geethu & Abhin",
-    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding reception of Geethu Girish Babu & Abhin A S at Snehanjali Community Hall, Kallayi Road, Kozhikode, Kerala."
+    googleCalendarDescription: "You are cordially invited with family to celebrate the wedding reception of Geethu & Abhin A S at Snehanjali Community Hall, Kallayi Road, Kozhikode, Kerala."
   },
 
   // Reception Details (Groom side)
@@ -82,7 +82,7 @@ export const weddingData = {
     city: "Kottarakara, Kerala",
     googleMapsUrl: "https://maps.google.com/?q=Royal+Convention+Centre,+Neduvathoor,+Kottarakara,+Kerala",
     googleCalendarTitle: "Post-Wedding Celebration of Geethu & Abhin (Groom’s Side)",
-    googleCalendarDescription: "You are cordially invited with family to celebrate the Post-Wedding Celebration of Geethu Girish Babu & Abhin A S at Royal Convention Centre, Neduvathoor, Kottarakara, Kerala."
+    googleCalendarDescription: "You are cordially invited with family to celebrate the Post-Wedding Celebration of Geethu & Abhin A S at Royal Convention Centre, Neduvathoor, Kottarakara, Kerala."
   },
 
   // Sacred Ceremonies Timeline

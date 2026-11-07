@@ -24,7 +24,7 @@ export function renderWeddingDetails() {
     city: "Kottarakara, Kerala",
     googleMapsUrl: "https://maps.google.com/?q=Royal+Convention+Centre,+Neduvathoor,+Kottarakara,+Kerala",
     googleCalendarTitle: "Post-Wedding Celebration of Geethu & Abhin (Groom’s Side)",
-    googleCalendarDescription: "You are cordially invited with family to celebrate the Post-Wedding Celebration of Geethu Girish Babu & Abhin A S at Royal Convention Centre, Neduvathoor, Kottarakara, Kerala."
+    googleCalendarDescription: "You are cordially invited with family to celebrate the Post-Wedding Celebration of Geethu & Abhin A S at Royal Convention Centre, Neduvathoor, Kottarakara, Kerala."
   };
   const groomReceptionStart = "20261128T100000Z"; // 3:30 PM IST = 10:00 UTC
   const groomReceptionEnd = "20261128T150000Z";   // 8:30 PM IST = 15:00 UTC
