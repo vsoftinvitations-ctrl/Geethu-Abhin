@@ -43,7 +43,7 @@ export const weddingData = {
     muhurthamLabel: "Wedding Ceremony (Muhurtham)",
     dateDisplay: "Thursday, 26 November 2026",
     timeDisplay: "7:00 AM – 8:00 AM",
-    muhurthamTimeWindow: "Muhurtham: 7:00 AM – 8:00 AM",
+    muhurthamTimeWindow: "",
     traditionalDate: "1202 Vrischikam 10",
     venueName: "Guruvayoor Temple",
     venueAddress: "Guruvayoor Temple",

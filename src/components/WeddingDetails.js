@@ -108,9 +108,8 @@ export function renderWeddingDetails() {
 
             <!-- Time Item -->
             <div class="details-item">
-              <span class="details-label">Auspicious Muhurtham</span>
+              <span class="details-label">Muhurtham</span>
               <span class="details-val-primary">${event.timeDisplay}</span>
-              <span class="details-val-secondary">${event.muhurthamTimeWindow}</span>
             </div>
           </div>
 
