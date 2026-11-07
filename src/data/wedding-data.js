@@ -74,15 +74,15 @@ export const weddingData = {
   // Reception Details (Groom side)
   groomReception: {
     label: "Wedding Reception",
-    traditionalDate: "Groom side Reception",
+    traditionalDate: "Post-Wedding Celebration by the Groom’s Side",
     dateDisplay: "Saturday, 28 November 2026",
     timeDisplay: "3:30 PM – 8:30 PM",
     venueName: "Royal Convention Centre",
     venueAddress: "Neduvathoor",
     city: "Kottarakara, Kerala",
     googleMapsUrl: "https://maps.google.com/?q=Royal+Convention+Centre,+Neduvathoor,+Kottarakara,+Kerala",
-    googleCalendarTitle: "Groom side Reception of Geethu & Abhin",
-    googleCalendarDescription: "You are cordially invited with family to celebrate the Groom side Reception of Geethu Girish Babu & Abhin A S at Royal Convention Centre, Neduvathoor, Kottarakara, Kerala."
+    googleCalendarTitle: "Post-Wedding Celebration of Geethu & Abhin (Groom’s Side)",
+    googleCalendarDescription: "You are cordially invited with family to celebrate the Post-Wedding Celebration of Geethu Girish Babu & Abhin A S at Royal Convention Centre, Neduvathoor, Kottarakara, Kerala."
   },
 
   // Sacred Ceremonies Timeline
