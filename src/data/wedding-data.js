@@ -126,6 +126,10 @@ export const weddingData = {
     {
       src: "/assets/frnd.png",
       alt: "With Dearest Friends & Family"
+    },
+    {
+      src: "/assets/image copy 2.png",
+      alt: "Geethu & Abhin Together"
     }
   ],
 
