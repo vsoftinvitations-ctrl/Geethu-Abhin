@@ -3,7 +3,7 @@ import { weddingData } from '../data/wedding-data.js';
 /**
  * Family & Friends Invitation Component
  * Unified single invitation from both bride's and groom's sides,
- * inviting family and friends together and signed off as Geethu — Abhin.
+ * inviting family and friends together and signed off as Geethu & Abhin.
  */
 export function renderFriendsInviteSection() {
   const { friendsInvite } = weddingData;
@@ -46,7 +46,7 @@ export function renderFriendsInviteSection() {
 
             <div class="friend-unified-sign-block">
               <span class="friend-sign-tag">With Warm Love &amp; Regards,</span>
-              <div class="friend-unified-names">${note.sign || 'Geethu — Abhin'}</div>
+              <div class="friend-unified-names">${note.sign || 'Geethu &amp; Abhin'}</div>
             </div>
           </div>
         </div>

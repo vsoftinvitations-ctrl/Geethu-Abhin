@@ -126,7 +126,7 @@ export const weddingData = {
       tag: "With Love From Both Families",
       title: "Cordially Inviting You With Family",
       message: "To our dearest family and friends who have filled our lives with boundless love, laughter, and cherished memories. From our childhood days to this sacred celebration, each of you holds an irreplaceable place in our hearts. As two best friends embark on this lifelong journey together, we warmly invite you and your family to celebrate our wedding and reception. Having your presence, blessings, and love with us as we begin our forever means everything to us!",
-      sign: "Geethu — Abhin"
+      sign: "Geethu & Abhin"
     }
   },
 
