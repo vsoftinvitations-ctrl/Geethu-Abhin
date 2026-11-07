@@ -8,7 +8,6 @@ import { renderCoupleSection } from './components/CoupleSection.js';
 import { renderFriendsInviteSection } from './components/FriendsInviteSection.js';
 import { renderWeddingDetails } from './components/WeddingDetails.js';
 import { renderKeralaVisual } from './components/KeralaVisual.js';
-import { renderCeremonyTimeline } from './components/CeremonyTimeline.js';
 import { renderCountdown, initCountdownTimer } from './components/Countdown.js';
 import { renderGallery, initGalleryCarousel } from './components/Gallery.js';
 import { renderLocationSection, initLocationSlider } from './components/LocationSection.js';
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ${renderFriendsInviteSection()}
     ${renderWeddingDetails()}
     ${renderKeralaVisual()}
-    ${renderCeremonyTimeline()}
     ${renderCountdown()}
     ${renderGallery()}
     ${renderLocationSection()}
