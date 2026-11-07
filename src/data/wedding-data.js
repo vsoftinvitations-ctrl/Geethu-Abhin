@@ -60,6 +60,7 @@ export const weddingData = {
   // Reception Details
   reception: {
     label: "Wedding Reception",
+    traditionalDate: "Bride side Pre-Wedding Celebration",
     dateDisplay: "Sunday, 22 November 2026",
     timeDisplay: "6:00 PM – 10:00 PM",
     venueName: "Snehanjali Community Hall",
