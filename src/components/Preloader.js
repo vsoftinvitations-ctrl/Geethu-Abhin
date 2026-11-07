@@ -103,13 +103,51 @@ export function initPreloader() {
     document.fonts.load('48px "Brittany Signature"').catch(() => {});
   }
 
-  let isDismissed = false;
+  let stage = 'waiting'; // 'waiting' | 'revealing' | 'dismissed'
+  let autoDismissTimer = null;
 
-  function openInvitation() {
-    if (isDismissed) return;
-    isDismissed = true;
+  function handleTapToOpen() {
+    if (stage !== 'waiting') {
+      // If user taps again while writings are displaying, immediately open the invitation
+      if (stage === 'revealing') {
+        dismissPreloader();
+      }
+      return;
+    }
 
-    // Ensure music is active upon user interaction
+    stage = 'revealing';
+
+    // 1. User interaction starts background audio immediately
+    startBackgroundMusic();
+
+    // 2. Start handwriting calligraphy animation ("Geethu & Abhin")
+    preloader.classList.add('preloader-animating');
+
+    // 3. Golden shimmer sweep on signature after writing finishes (5.0s)
+    setTimeout(() => {
+      const scriptBox = document.getElementById('preloader-script-box');
+      if (scriptBox) {
+        scriptBox.classList.add('shimmer-active');
+        scriptBox.querySelectorAll('.script-text').forEach((el) => {
+          el.style.clipPath = 'none';
+          el.style.opacity = '1';
+          el.style.visibility = 'visible';
+        });
+      }
+    }, 5000);
+
+    // 4. Smoothly reveal the invitation after enjoying the handwriting & melody (7.0s)
+    autoDismissTimer = setTimeout(() => {
+      dismissPreloader();
+    }, 7000);
+  }
+
+  function dismissPreloader() {
+    if (stage === 'dismissed') return;
+    stage = 'dismissed';
+    if (autoDismissTimer) clearTimeout(autoDismissTimer);
+
+    // Ensure music is active
     startBackgroundMusic();
 
     preloader.classList.add('preloader-fade-out');
@@ -122,19 +160,26 @@ export function initPreloader() {
     }, 1850);
   }
 
-  // Only clicking the "Tap to Open" button opens the invitation
+  // Only clicking the "Tap to Open" button starts the writings & opens the invitation
   const enterBtn = document.getElementById('preloader-enter-btn');
   if (enterBtn) {
     enterBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      openInvitation();
+      handleTapToOpen();
     });
   }
+
+  // If user taps while writings are playing, allow skipping directly to the invitation
+  preloader.addEventListener('click', () => {
+    if (stage === 'revealing') {
+      dismissPreloader();
+    }
+  });
 
   // Also support keyboard Enter/Space/Escape
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
-      openInvitation();
+      handleTapToOpen();
     }
   });
 }
