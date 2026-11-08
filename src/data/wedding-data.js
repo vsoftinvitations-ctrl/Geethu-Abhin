@@ -53,8 +53,8 @@ export const weddingData = {
     googleMapsUrl: "https://maps.google.com/?q=Guruvayoor+Temple,+Guruvayur,+Kerala",
     googleCalendarTitle: "Wedding Ceremony of Geethu & Abhin",
     googleCalendarDescription: "You are cordially invited with family to celebrate the wedding ceremony of Geethu & Abhin A S at Guruvayoor Temple, Guruvayur, Kerala (1202 Vrischikam 10).",
-    // Target ISO date for the live countdown timer (YYYY-MM-DDTHH:mm:ss+05:30)
-    targetCountdownDate: "2026-11-26T07:00:00+05:30"
+    // Target ISO date for the live countdown timer (YYYY-MM-DDTHH:mm:ss+05:30) - November 26, 12:00 AM midnight IST
+    targetCountdownDate: "2026-11-26T00:00:00+05:30"
   },
 
   // Reception Details (Bride side)
