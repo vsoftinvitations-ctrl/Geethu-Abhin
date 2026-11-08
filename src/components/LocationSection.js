@@ -14,7 +14,7 @@ export function renderLocationSection() {
     <section id="location-section" class="location-section">
       <div class="location-section-header reveal-on-scroll">
         <h2 class="location-title-en">${texts.locationHeading || 'Locations & Directions'}</h2>
-        <p class="location-subtitle-en">Join us to celebrate in Guruvayur, Kozhikode and Kottarakara</p>
+        <p class="location-subtitle-en">${texts.locationSubtitle || 'Join us to celebrate'}</p>
         <div class="section-divider" style="margin-top: 0.75rem; margin-bottom: 2rem;">
           <img src="/assets/kerala-divider.svg" alt="Kerala Divider" width="240" height="24" />
         </div>

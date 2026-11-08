@@ -47,7 +47,7 @@ export function renderWeddingDetails() {
         <div class="kasavu-card wedding-details-card reception-details-card reveal-on-scroll">
           <div class="event-type-badge reception-badge">Celebration Evening</div>
           <div class="details-muhurtham-label">${reception.label || 'Wedding Reception'}</div>
-          <div class="details-traditional-date">${reception.traditionalDate || 'Pre-Wedding Celebration from Bride side'}</div>
+          <div class="details-traditional-date">${reception.traditionalDate || 'Pre-Wedding Celebration by the Bride’s side'}</div>
 
           <div class="details-grid">
             <!-- Date Item -->

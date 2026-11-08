@@ -6,7 +6,7 @@
 export const weddingData = {
   // Couple Information
   bride: {
-    name: "Geethu",
+    name: "Geethu Girish Babu",
     shortName: "Geethu",
     qualifications: "",
     image: "/assets/bride.jpg",
@@ -60,7 +60,7 @@ export const weddingData = {
   // Reception Details (Bride side)
   reception: {
     label: "Wedding Reception",
-    traditionalDate: "Pre-Wedding Celebration from Bride side",
+    traditionalDate: "Pre-Wedding Celebration by the Bride’s side",
     dateDisplay: "Sunday, 22 November 2026",
     timeDisplay: "6:00 PM – 10:00 PM",
     venueName: "Snehanjali Community Hall",
@@ -158,6 +158,7 @@ export const weddingData = {
     familyHeading: "With the blessings of our families",
     countdownHeading: "Counting the moments to our wedding...",
     locationHeading: "Locations & Directions",
+    locationSubtitle: "Join us to celebrate",
     finalBlessingEnglish: "Your presence, laughter, and blessings\nwill make our celebration truly complete.",
     withLove: "With Love, Geethu & Abhin"
   }
