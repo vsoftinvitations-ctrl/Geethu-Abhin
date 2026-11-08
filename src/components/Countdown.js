@@ -1,12 +1,13 @@
 import { weddingData } from '../data/wedding-data.js';
 
 export function renderCountdown() {
-  const { texts } = weddingData;
+  const { texts, event } = weddingData;
 
   return `
     <section id="countdown-section" class="countdown-section">
       <div class="kasavu-card countdown-card" style="padding: clamp(2rem, 5vw, 3.5rem) 1.5rem; max-width: 720px; margin: 0 auto;">
         <h2 class="countdown-heading reveal-on-scroll">${texts.countdownHeading}</h2>
+        <p class="countdown-target-date reveal-on-scroll">${event.dateDisplay}</p>
 
         <div class="countdown-grid reveal-on-scroll">
           <div class="countdown-box">

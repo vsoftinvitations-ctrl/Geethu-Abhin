@@ -1786,6 +1786,16 @@ section {
   font-size: clamp(1.3rem, 3.2vw, 1.8rem);
   font-style: italic;
   color: var(--earth-brown);
+  margin-bottom: 0.35rem;
+}
+
+.countdown-target-date {
+  font-family: var(--font-serif-en);
+  font-size: clamp(0.88rem, 2vw, 1.05rem);
+  color: var(--gold-deep);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
   margin-bottom: 2rem;
 }
 
